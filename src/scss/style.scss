@@ -1,0 +1,19 @@
+/*!
+Theme Name: Aleks Blagojevich
+Theme URI: http://aleksblago.com
+Author: Aleks Blagojevich
+Author URI: http://aleksblago.com
+Description: Since 2001 this website has been redesigned from the ground up 5 times.
+Version: 5.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import "globals/reset";
+@import "globals/variables";
+@import "globals/placeholders";
+@import "globals/mixins";
+@import "globals/typography";
+
+@import "partials/general";
+@import "partials/navigation";

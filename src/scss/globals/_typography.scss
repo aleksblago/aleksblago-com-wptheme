@@ -1,0 +1,166 @@
+h1, h2, h3, h4, h5 {
+	color: $MID_GREY;
+	font-family: $SANS_SERIF_FONT;
+	font-size: 26px;
+	font-weight: normal;
+	line-height: 120%;
+	margin-bottom: 30px;
+	
+	& > a {
+		text-decoration: none;
+	}
+}
+
+h1 {
+	font-size: 42px;
+	
+	@media screen and (max-width: 1024px) {
+		& { font-size: 40px; }
+	}
+	
+	@media screen and (max-width: 800px) {
+		& { font-size: 38px; }
+	}
+	
+	@media screen and (max-width: 640px) {
+		& { font-size: 36px; }
+	}
+}
+
+h2 {
+	font-size: 30px;
+	
+	@media screen and (max-width: 1024px) {
+		& { font-size: 28px; }
+	}
+	
+	@media screen and (max-width: 800px) {
+		& { font-size: 26px; }
+	}
+	
+	@media screen and (max-width: 640px) {
+		& { font-size: 24px; }
+	}
+}
+
+h3 {
+	font-size: 26px;
+	
+	@media screen and (max-width: 1024px) {
+		& { font-size: 24px; }
+	}
+	
+	@media screen and (max-width: 800px) {
+		& { font-size: 22px; }
+	}
+	
+	@media screen and (max-width: 640px) {
+		& { font-size: 20px; }
+	}
+}
+
+h4, h5, h6 { 
+	font-size: 24px;
+	
+	@media screen and (max-width: 1024px) {
+		& { font-size: 22px; }
+	}
+	
+	@media screen and (max-width: 800px) {
+		& { font-size: 20px; }
+	}
+	
+	@media screen and (max-width: 640px) {
+		& { font-size: 18px; }
+	}
+}
+
+blockquote {
+	color: $DARK_GREY;
+	font-size: 24px;
+	font-style: italic;
+	line-height: 160%;
+	margin: 50px -9% 40px -9%;
+	text-align: center;
+	
+	& > p {
+		display: inline-block;
+		
+		&::before,
+		&::after {
+			content: '\0022';
+			font-family: $SERIF_FONT;
+			font-style: italic;
+		}
+	}
+	
+	& > cite {
+		color: $LIGHT_GREY;
+		display: block;
+		font-family: $SANS_SERIF_FONT;
+		font-size: 18px;
+		font-style: normal;
+		padding: 10px 8% 0 0;
+		text-align: right;
+		text-transform: uppercase;
+		
+		&::before {
+			content: '\2014\0020';
+		}
+	
+		@media screen and (max-width: 1024px) {
+			& {
+				font-size: 17px;
+			}
+		}
+		
+		@media screen and (max-width: 640px) {
+			& {
+				font-size: 16px;
+			}
+		}
+	}
+	
+	@media screen and (max-width: 1024px) {
+		& {
+			font-size: 22px;
+		}
+	}
+	
+	@media screen and (max-width: 640px) {
+		& {
+			font-size: 20px;
+		}
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+ul, ol {
+	margin: 0 0 32px 32px;
+	list-style-position: outside;
+	
+	& > li {
+		margin-bottom: 8px;
+	}
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+// Adjust fixed width icons.
+.fa-fw {
+	position: relative;
+	top: -1px;
+}

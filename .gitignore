@@ -1,0 +1,4 @@
+# Project Dependencies
+# https://github.com/aleksblago/aleksblago-com-wptheme.git
+node_modules
+.git

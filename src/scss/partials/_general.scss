@@ -1,0 +1,200 @@
+body {
+	background: $BODY_COLOR;
+	color: $SERIF_FONT_COLOR;
+	font-family: $SERIF_FONT;
+	font-size: $SERIF_FONT_SIZE;
+	line-height: $BASE_LINE_HEIGHT;
+	
+	@media screen and (max-width: 1024px) {
+		& {
+			font-size: 17px;
+		}
+	}
+	
+	@media screen and (max-width: 640px) {
+		& {
+			font-size: 16px;
+		}
+	}
+}
+
+a {
+	color: $DARK_GREEN;
+	transition: color $ANIM_SPEED;
+	text-decoration: none;
+	
+	&:hover {
+		color: $MID_GREEN;
+	}
+}
+
+.ui-Container {
+	@extend %CLEAR;
+	margin: 0 auto;
+	position: relative;
+	width: 1180px;
+	
+	@media screen and (max-width: 1200px) {
+		& {
+			width: 1000px;
+		}
+	}
+	
+	@media screen and (max-width: 1024px) {
+		& {
+			width: 760px;
+		}
+	}
+	
+	@media screen and (max-width: 800px) {
+		& {
+			width: 600px;
+			position: relative;
+		}
+	}
+	
+	@media screen and (max-width: 640px) {
+		& {
+			width: 500px;
+		}
+	}
+	
+	@media screen and (max-width: 560px) {
+		& {
+			width: 95%;
+		}
+	}
+}
+
+.ui-ContentContainer {
+	float: right;
+	width: 72%;
+	max-width: 900px;
+	margin: 40px 0 0 0;
+
+	@media screen and (max-width: 800px) {
+		& {
+			width: 100%;
+			position: relative;
+		}
+	}
+}
+
+.ui-Post,
+.ui-AuthorContainer {
+	background: $WHITE;
+	margin-bottom: 40px;
+	min-height: 100px;
+	box-shadow: 0 0 2px 1px rgba(0,0,0,0.06), 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.ui-PostHeader {
+	text-align: center;
+	
+	& > h1 {
+		font-family: $SANS_SERIF_FONT;
+		padding: 70px 12% 0 12%;
+	}
+}
+
+.ui-PostImage {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.ui-PostMeta {
+	color: $LIGHT_GREY;
+	font-size: 14px;
+	font-family: $SANS_SERIF_FONT;
+	font-weight: normal;
+	padding: 14px 12% 0 12%;
+	text-transform: uppercase;
+	
+	& > span {
+		display: inline-block;
+		padding: 0 8px;
+		
+		& > i {
+			margin-right: 4px;
+		}
+	}
+}
+	
+.ui-PostBody {
+	font-family: $SERIF_FONT;
+	padding: 40px 12% 0 12%;
+	
+	& a {
+		font-weight: bold;
+	}
+	
+	& figure {
+		margin: 0 -9% 40px -9%;
+		padding: 5px 0 0 0;
+		text-align: center;
+		
+		& > img {
+			max-width: 100%;
+		}
+		
+		& > figcaption {
+			color: $LIGHT_GREY;
+			font-size: 0.9em;
+			font-style: italic;
+			text-align: center;
+		}
+	}
+	
+	& > p {
+		line-height: 180%;
+		margin-bottom: 40px;
+	}
+}
+
+.ui-Button--more {
+	background: transparent;
+	border: 1px solid $DARK_GREEN;
+	color: $DARK_GREEN;
+	display: block;
+	font-family: $SANS_SERIF_FONT;
+	font-size: 16px;
+	padding: 6px 0;
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: 120px;
+	
+	border-radius: 2px;
+	
+	transition: background $ANIM_SPEED, border $ANIM_SPEED, color $ANIM_SPEED;
+	
+	&:hover {
+		background: $MID_GREEN;
+		border: 1px solid $MID_GREEN;
+		color: $WHITE;
+	}
+	
+	&:active {
+		background: $DARK_GREEN;
+		border: 1px solid $DARK_GREEN;
+		transition: none;
+	}
+}
+
+.ui-PostFooter {
+	padding-bottom: 60px;
+	text-align: center;
+}
+
+.soc-SharePost {
+	display: block;
+	font-size: 26px;
+	margin: 0 auto;
+	padding: 0 12%;
+	
+	& > li {
+	 	display: inline-block;
+	 	padding: 0 6px;
+	}
+}

@@ -1,2 +1,3 @@
-# aleksblago-com-wptheme
-WordPress theme build for my personal website aleksblago.com
+# WordPress Theme for AleksBlago.com
+
+WordPress theme build for my personal website at aleksblago.com
