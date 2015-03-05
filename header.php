@@ -55,3 +55,4 @@
 
 <body>
 	<div class="ui-Container">
+		<?php get_template_part('navigation'); ?>

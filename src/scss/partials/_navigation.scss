@@ -67,16 +67,23 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 
 .nav-Links {
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
 	
-	& > li > a {
-		color: $WHITE;
-		font-family: $SANS_SERIF_FONT;
-		font-size: 22px;
-		text-decoration: none;
-		text-transform: uppercase;
+	& > li {
+		margin: 0;
+		padding: 0;
 		
-		&:hover {
-			color: $LIGHT_GREEN;
+		& > a {
+			color: $WHITE;
+			font-family: $SANS_SERIF_FONT;
+			font-size: 22px;
+			text-decoration: none;
+			text-transform: uppercase;
+			
+			&:hover {
+				color: $LIGHT_GREEN;
+			}
 		}
 	}
 }

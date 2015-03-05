@@ -2,12 +2,7 @@
 		<nav class="nav-Primary">
 			<header class="nav-Intro">
 				<h1 class="nav-Title"><a href="">A<span>B</span></a></h1>
-				<ul class="nav-Links">
-					<li><a href="">About</a></li>
-					<li><a href="">Blog</a></li>
-					<li><a href="">Tools</a></li>
-					<li><a href="">Search</a></li>
-				</ul>
+				<?php aleksblago_nav(); ?>
 			</header>
 			<footer class="nav-Footer">
 				<ul class="nav-Social">
