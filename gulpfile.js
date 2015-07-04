@@ -13,9 +13,6 @@ var gulp = require('gulp'),
 	compass = require('gulp-compass'),
 	minifycss = require('gulp-minify-css'),
 	autoprefixer = require('gulp-autoprefixer'),
-	imagemin = require('gulp-imagemin'),
-	jpegtran = require('imagemin-jpegtran'),
-	pngcrush = require('imagemin-pngcrush'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	browserSync = require('browser-sync'),
@@ -48,16 +45,6 @@ gulp.task('js', function() {
 		.pipe(uglify())
 		.pipe(gulp.dest('./js'))
 		.pipe(reload({stream: true}));
-});
-
-gulp.task('img', function() {
-	gulp.src('./src/img/**')
-		.pipe(imagemin({
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [jpegtran(), pngcrush()]
-		}))
-		.pipe(gulp.dest('./img'));
 });
 
 gulp.task('watch', function() {

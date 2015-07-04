@@ -1,7 +1,7 @@
 		<?php /* Site Navigation */ ?>
 		<nav class="nav-Primary">
 			<header class="nav-Intro">
-				<h1 class="nav-Title"><a href="">A<span>B</span></a></h1>
+				<h1 class="nav-Title"><a href="<?php bloginfo('url'); ?>">A<span>B</span></a></h1>
 				<?php aleksblago_nav(); ?>
 			</header>
 			<footer class="nav-Footer">
