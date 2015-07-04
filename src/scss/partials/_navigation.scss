@@ -11,16 +11,23 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	width: 22%;
 	height: 100%;
 
-	// Hide the navigation when smaller than 800px;
 	@media screen and (max-width: 800px) {
 		& {
-			display: none;
+			padding: 0 30px;
+			position: relative;
+			width: 100%;
 		}
 	}
 }
 	
 .nav-Intro {
 	padding-bottom: 100px;
+	
+	@media screen and (max-width: 800px) {
+		& {
+			padding: 0;
+		}
+	}
 }
 
 .img-Logo {
@@ -42,6 +49,12 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			letter-spacing: 0;
 		}
 	}
+	
+	@media screen and (max-width: 800px) {
+		& {
+			float: right;
+		}
+	}
 }
 
 .nav-Background {
@@ -60,7 +73,12 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	// Hide the navigation when smaller than 800 pixels.
 	@media screen and (max-width: 800px) {
 		& {
-			display: none;
+			top: 0;
+			left: 0;
+			right: auto;
+			bottom: auto;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }
@@ -84,6 +102,26 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			&:hover {
 				color: $LIGHT_GREEN;
 			}
+		}
+	}
+	
+	@media screen and (max-width: 800px) {
+		
+		& {
+			display: block;
+			float: left;
+			width: 100%;
+		}
+		
+		&::before {
+			display: block;
+			content: 'Menu';
+			color: white;
+		}
+		
+		& > li {
+			text-align: left;
+			width: 100%;
 		}
 	}
 }
@@ -112,6 +150,14 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			&:hover {
 				color: $LIGHT_GREEN;
 			}
+		}
+	}
+}
+
+.nav-Footer {
+	@media screen and (max-width: 800px) {
+		& {
+			display: none;
 		}
 	}
 }
