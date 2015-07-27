@@ -41,13 +41,28 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	text-transform: uppercase;
 	
 	& > a {
-		color: $WHITE;
 		text-decoration: none;
 		
 		& > span {
+			transition: color $ANIM_SPEED;
+		}
+		
+		& > .a {
+			color: $WHITE;
+		}
+		
+		& > .b {
 			color: rgba(255,255,255,0.3);
 			letter-spacing: 0;
 		}
+	}
+	
+	& > a:hover .a {
+		color: rgba(255,255,255,0.3);
+	}
+	
+	& > a:hover .b {
+		color: $WHITE;
 	}
 	
 	@media screen and (max-width: 800px) {
@@ -91,8 +106,10 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	& > li {
 		margin: 0;
 		padding: 0;
+		overflow: hidden;
 		
 		& > a {
+			border-top: 1px solid rgba(255,255,255,0.15);
 			color: $WHITE;
 			font-family: $SANS_SERIF_FONT;
 			font-size: 22px;
@@ -105,23 +122,70 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		}
 	}
 	
+	& > .nav-MobileMenu {
+		display: none;
+	}
+	
 	@media screen and (max-width: 800px) {
 		
 		& {
 			display: block;
 			float: left;
-			width: 100%;
-		}
-		
-		&::before {
-			display: block;
-			content: 'Menu';
-			color: white;
+			width: 80%;
 		}
 		
 		& > li {
+			opacity: 1;
+			height: 0;
 			text-align: left;
-			width: 100%;
+			width: 125%;
+			
+			transform: opacity .3s, height .3s;
+		}
+		
+		& > .nav-MobileMenu {
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			display: block;
+			opacity: 1;
+			height: auto;
+			line-height: 48px;
+			margin-top: 50px;
+			text-align: center;
+			width: 42px;
+			
+			&::before {
+				content: '\f0c9';
+				color: $WHITE;
+				font-family: $FONT_ICONS;
+				font-size: 46px;
+			}
+		}
+	
+		&.active {
+			& > li {
+				opacity: 1;
+				height: 100%;
+				vertical-align: bottom;
+				
+				&:nth-child(2) {
+					margin-top: 30px;
+				}
+				
+				&:last-child {
+					margin-bottom: 30px;
+				}
+				
+				& > a {
+					display: block;
+					padding: 10px 0;
+				}
+			}
+			
+			& > .nav-MobileMenu {
+				border: 0;
+			}
 		}
 	}
 }

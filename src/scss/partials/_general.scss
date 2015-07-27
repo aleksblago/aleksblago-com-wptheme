@@ -34,33 +34,34 @@ a {
 
 .ui-Container {
 	@extend %CLEAR;
+	box-sizing: border-box;
 	margin: 0 auto;
+	padding-right: 55px;
 	position: relative;
 	width: 1180px;
 	min-height: 100%;
 	
 	@media screen and (max-width: 1200px) {
 		& {
+			padding-right: 45px;
 			width: 1000px;
 		}
 	}
 	
 	@media screen and (max-width: 1024px) {
 		& {
-			width: 760px;
+			padding-right: 5%;
+			width: 100%;
+			// padding-right: 25px;
+			// width: 760px;
 		}
 	}
 	
 	@media screen and (max-width: 800px) {
 		& {
-			width: 85%;
-			position: relative;
-		}
-	}
-	
-	@media screen and (max-width: 640px) {
-		& {
+			padding: 0;
 			width: 90%;
+			position: relative;
 		}
 	}
 	
@@ -79,8 +80,8 @@ a {
 
 	@media screen and (max-width: 800px) {
 		& {
-			width: 100%;
 			position: relative;
+			width: 100%;
 		}
 	}
 }
@@ -120,10 +121,6 @@ a {
 	& > span {
 		display: inline-block;
 		padding: 0 8px;
-		
-		& > i {
-			margin-right: 4px;
-		}
 	}
 }
 	
@@ -190,9 +187,25 @@ a {
 }
 
 .ui-PostFooter {
-	padding-bottom: 60px;
+	@extend %CLEAR;
+	padding: 0 12% 60px;
 	text-align: center;
 }
+
+.nav-PostPrev {
+	float: left;
+	padding-left: 12%;
+	text-align: left;
+	width: 30%;
+}
+
+.nav-PostNext {
+	float: right;
+	padding-right: 12%;
+	text-align: right;
+	width: 30%;
+}
+
 
 .soc-SharePost {
 	display: block;

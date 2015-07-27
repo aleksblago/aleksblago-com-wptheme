@@ -27,7 +27,7 @@ function aleksblago_nav()
 			'menu_class'      => 'nav-Links',
 			'echo'            => true,
 			'fallback_cb'     => 'wp_page_menu',
-			'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+			'items_wrap'      => '<ul class="%2$s"><li class="nav-MobileMenu"></li>%3$s</ul>',
 			'depth'           => 0
 		)
 	);
@@ -54,6 +54,14 @@ function my_wp_nav_menu_args( $args = '' )
 function my_css_attributes_filter( $var )
 {
 	return is_array($var) ? array() : '';
+}
+
+function theme_styles_and_scripts()
+{
+	wp_enqueue_style( 'font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', array(), '4.2.3' );
+	wp_enqueue_style( 'font-oswald', 'http://fonts.googleapis.com/css?family=Oswald', array(), '4.2.3' );
+	wp_enqueue_style( 'font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
+	wp_enqueue_script( 'aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -84,6 +92,7 @@ function my_custom_excerpt( $length )
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
 add_action('init', 'register_aleksblago_menu'); // Add HTML5 Blank Menu
+add_action( 'wp_enqueue_scripts', 'theme_styles_and_scripts' ); // wp_enqueue_scripts action hook to link only on the front-end
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
 add_filter('style_loader_tag', 'my_style_remove'); // Remove 'text/css' from enqueued stylesheet
