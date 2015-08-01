@@ -1,5 +1,8 @@
 <?php
 
+// Register custom post type meta boxes.
+require_once('includes/class-add-meta-box.php');
+
 if (function_exists('add_theme_support'))
 {
 	// Add Menu Support
@@ -17,7 +20,7 @@ if (function_exists('add_theme_support'))
 
 }
 
-// HTML5 Blank navigation
+// Format site navigation
 function aleksblago_nav()
 {
 	wp_nav_menu(
@@ -58,10 +61,11 @@ function my_css_attributes_filter( $var )
 
 function theme_styles_and_scripts()
 {
-	wp_enqueue_style( 'font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', array(), '4.2.3' );
-	wp_enqueue_style( 'font-oswald', 'http://fonts.googleapis.com/css?family=Oswald', array(), '4.2.3' );
-	wp_enqueue_style( 'font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
-	wp_enqueue_script( 'aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true );
+	wp_enqueue_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', array(), '4.2.3');
+	wp_enqueue_style('font-oswald', 'http://fonts.googleapis.com/css?family=Oswald', array(), '4.2.3');
+	wp_enqueue_style('font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0');
+	wp_register_script('aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true);
+	wp_enqueue_script('aleksblago');
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -87,19 +91,37 @@ function my_custom_excerpt( $length )
 	return 70;
 }
 
+// YouTube and Vimeo Meta Box
+add_aleksblago_meta_box('featured-embed', array(
+	'title'     => 'Featured Embed',
+	'pages'     => array('post'),
+	'context'   => 'normal',
+	'priority'  => 'high',
+	'fields'    => array(
+		array(
+			'name' => 'Embed Code:',
+			'id' => 'featured-embed',
+			'default' => '',
+			'placeholder' => '',
+			'desc' => 'Enter the embed code in the text area above.',
+			'type' => 'textarea'
+		)
+	)
+));
+
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
 add_action('init', 'register_aleksblago_menu'); // Add HTML5 Blank Menu
-add_action( 'wp_enqueue_scripts', 'theme_styles_and_scripts' ); // wp_enqueue_scripts action hook to link only on the front-end
+add_action('wp_enqueue_scripts', 'theme_styles_and_scripts'); // wp_enqueue_scripts action hook to link only on the front-end
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
 add_filter('style_loader_tag', 'my_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 add_filter('excerpt_more', 'remove_excerpt_brackets');
-add_filter( 'excerpt_length', 'my_custom_excerpt', 999);
+add_filter('excerpt_length', 'my_custom_excerpt', 999);
 
 
 ?>

@@ -1,15 +1,60 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>
+	
+	<?php
+	
+	$embed = aleksMetaBox::get('featured-embed');
+	$embedType = '';
+	$plusBackground = '';
+	$thumbUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$hasBoth = ($embed !== '' && has_post_thumbnail());
+	
+	if (strpos($embed, 'twitter.com')) {
+		
+		$embedType = 'twitter';
+		
+	} elseif (strpos($embed, 'youtube.com') || strpos($embed, 'vimeo.com')) {
+		
+		$embedType = 'video';
+		
+	} elseif (strpos($embed, 'instagram.com')) {
+		
+		$embedType = 'instagram';
+		
+	} elseif (strpos($embed, 'codepen.io')) {
+		
+		$embedType = 'codepen';
+		
+	} elseif (strpos($embed, 'vine.co')) {
+		
+		$embedType = 'vine';
+		
+	}
+	
+	?>
 
 	<article class="ui-Post">
 
 		<header class="ui-PostHeader">
-		<?php if (has_post_thumbnail()) : ?>
+			
+			<div class="ui-PostFeature <?php echo ($embed !== '') ? 'featured-' . $embedType : '' ?>" <?php echo ($hasBoth && $embedType != 'video' && $embedType != 'codepen') ? 'style="background: url('. $thumbUrl .') top center;"' : ''; ?>>
 			<?php if (is_singular()) : ?>
-			<?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?>
+			
+				<?php echo ($embed !== '') ? $embed : ''; ?>
+				
+				<?php if (has_post_thumbnail() && $embed === '') : ?>
+				<?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?>
+				<?php endif; ?>
+				
 			<?php elseif (is_home() || is_front_page() || is_archive()) : ?>
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?></a>
+			
+				<?php echo ($embed !== '') ? $embed : ''; ?>
+				<?php if (has_post_thumbnail() && $embed === '') : ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?></a>
+				<?php endif; ?>
+				
 			<?php endif; ?>
-		<?php endif; ?>
+			</div>
+			
 		<?php if (is_front_page()) : ?>
 			<h1>Title in Code</h1>
 		<?php elseif (is_singular()) : ?>
@@ -17,8 +62,10 @@
 		<?php else : ?>
 			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<?php endif; ?>
-		<?php // IF we're on the default homepage, on a dynamic blog page, on an archive page, or on a single post page. ?>
-		<?php // Basically, exclude the author and date on the static homepage. ?>
+		<?php
+			// IF we're on the default homepage, on a dynamic blog page, on an archive page, or on a single post page.
+			// Basically, exclude the author and date on the static homepage.
+		?>
 		<?php if ((is_front_page() && is_home()) || is_home() || is_archive() || is_single()) : ?>
 			<div class="ui-PostMeta">
 				<span><i class="fa fa-fw fa-user"></i> <?php the_author_posts_link(); ?></span>
@@ -27,7 +74,7 @@
 		<?php endif; ?>
 		</header>
 		
-		<div class="ui-PostBody">
+		<div class="ui-PostBody<?php echo (in_category('quotes')) ? ' Quotes' : ''; ?>">
 			<?php if (is_singular()) : ?>
 			<?php the_content(); ?>
 			<?php else : ?>

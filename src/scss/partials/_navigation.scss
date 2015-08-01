@@ -21,6 +21,7 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 }
 	
 .nav-Intro {
+	@extend %CLEAR;
 	padding-bottom: 100px;
 	
 	@media screen and (max-width: 800px) {
@@ -109,7 +110,6 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		overflow: hidden;
 		
 		& > a {
-			border-top: 1px solid rgba(255,255,255,0.15);
 			color: $WHITE;
 			font-family: $SANS_SERIF_FONT;
 			font-size: 22px;
@@ -131,14 +131,14 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		& {
 			display: block;
 			float: left;
-			width: 80%;
+			width: 50%;
 		}
 		
 		& > li {
 			opacity: 1;
 			height: 0;
 			text-align: left;
-			width: 125%;
+			width: 200%;
 			
 			transform: opacity .3s, height .3s;
 		}
@@ -154,17 +154,20 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			margin-top: 50px;
 			text-align: center;
 			width: 42px;
+			transform: opacity .3s, height .3s;
 			
 			&::before {
 				content: '\f0c9';
 				color: $WHITE;
 				font-family: $FONT_ICONS;
-				font-size: 46px;
+				font-size: 40px;
 			}
 		}
 	
 		&.active {
 			& > li {
+				border-top: 1px solid rgba(255,255,255,0.15);
+				display: block;
 				opacity: 1;
 				height: 100%;
 				vertical-align: bottom;
@@ -173,13 +176,9 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 					margin-top: 30px;
 				}
 				
-				&:last-child {
-					margin-bottom: 30px;
-				}
-				
 				& > a {
-					display: block;
-					padding: 10px 0;
+					display: inline-block;
+					padding: 10px 30px 10px 0;
 				}
 			}
 			
@@ -190,38 +189,61 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	}
 }
 
-// Social media buttons
-.nav-Social {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	
-	& > li {
-		display: inline-block;
-		font-size: 20px;
-		
-		// Make the social media icons slightly smaller
-		// as the screen size decreases.
-		@media screen and (max-width: 1024px) {
-			& {
-				font-size: 18px;
-			}
-		}
-		
-		a {
-			color: $WHITE;
-	
-			&:hover {
-				color: $LIGHT_GREEN;
-			}
-		}
-	}
-}
 
 .nav-Footer {
+	
 	@media screen and (max-width: 800px) {
 		& {
 			display: none;
 		}
 	}
+	
+	// Social media buttons
+	.nav-Social {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		& > li {
+			display: inline-block;
+			font-size: 20px;
+			
+			// Make the social media icons slightly smaller
+			// as the screen size decreases.
+			@media screen and (max-width: 1024px) {
+				& {
+					font-size: 18px;
+				}
+			}
+			
+			a {
+				color: $WHITE;
+		
+				&:hover {
+					color: $LIGHT_GREEN;
+				}
+			}
+		}
+	}
+	
+	&.active {
+		
+		@media screen and (max-width: 800px) {
+			& {
+				display: block;
+				margin: 50px 0 30px 0;
+			}
+			
+			& > .nav-Social > li {
+				font-size: 22px;
+				margin: 0 0 10px 5px;
+			}
+		}
+		
+	}
+	
+	
 }
+
+// .nav-Footer {
+// }

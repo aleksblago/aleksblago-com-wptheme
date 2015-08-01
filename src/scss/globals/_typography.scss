@@ -85,16 +85,9 @@ blockquote {
 	
 	& > p {
 		display: inline-block;
-		
-		&::before,
-		&::after {
-			content: '\0022';
-			font-family: $SERIF_FONT;
-			font-style: italic;
-		}
 	}
 	
-	& > cite {
+	cite {
 		color: $LIGHT_GREY;
 		display: block;
 		font-family: $SANS_SERIF_FONT;
