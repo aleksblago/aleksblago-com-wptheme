@@ -272,10 +272,20 @@ a {
 	display: block;
 	font-size: 26px;
 	margin: 0 auto;
-	padding: 0 12%;
+	padding: 0;
+	text-align: center;
 	
 	& > li {
 	 	display: inline-block;
-	 	padding: 0 6px;
+	 	padding: 0 10px;
+	}
+	
+	& > li:first-child {
+		color: $DARK_GREY;
+		display: block;
+		font-size: 16px;
+		font-family: $SANS_SERIF_FONT;
+		margin: 0;
+		padding: 0 0 20px 0;
 	}
 }
