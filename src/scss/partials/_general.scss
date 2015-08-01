@@ -160,7 +160,7 @@ a {
 
 .ui-PostImage {
 	display: block;
-	max-width: 100%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -186,14 +186,21 @@ a {
 		font-weight: bold;
 	}
 	
+	& img {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	
+	& p img {
+		margin: 40px auto;
+	}
+	
 	& figure {
 		margin: 0 -9% 40px -9%;
 		padding: 5px 0 0 0;
 		text-align: center;
 		
-		& > img {
-			max-width: 100%;
-		}
 		
 		& > figcaption {
 			color: $LIGHT_GREY;
@@ -203,7 +210,7 @@ a {
 		}
 	}
 	
-	& > p {
+	& p {
 		line-height: 180%;
 		margin-bottom: 40px;
 	}
