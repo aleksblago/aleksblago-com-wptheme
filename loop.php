@@ -9,25 +9,15 @@
 	$hasBoth = ($embed !== '' && has_post_thumbnail());
 	
 	if (strpos($embed, 'twitter.com')) {
-		
 		$embedType = 'twitter';
-		
 	} elseif (strpos($embed, 'youtube.com') || strpos($embed, 'vimeo.com')) {
-		
 		$embedType = 'video';
-		
 	} elseif (strpos($embed, 'instagram.com')) {
-		
 		$embedType = 'instagram';
-		
 	} elseif (strpos($embed, 'codepen.io')) {
-		
 		$embedType = 'codepen';
-		
 	} elseif (strpos($embed, 'vine.co')) {
-		
 		$embedType = 'vine';
-		
 	}
 	
 	?>
@@ -55,16 +45,14 @@
 			<?php endif; ?>
 			</div>
 			
-		<?php if (is_front_page()) : ?>
-			<h1>Title in Code</h1>
-		<?php elseif (is_singular()) : ?>
+		<?php if (is_singular()) : ?>
 			<h1><?php the_title(); ?></h1>
 		<?php else : ?>
 			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<?php endif; ?>
 		<?php
 			// IF we're on the default homepage, on a dynamic blog page, on an archive page, or on a single post page.
-			// Basically, exclude the author and date on the static homepage.
+			// Basically, exclude the author and date on a static homepage.
 		?>
 		<?php if ((is_front_page() && is_home()) || is_home() || is_archive() || is_single()) : ?>
 			<div class="ui-PostMeta">
@@ -93,12 +81,19 @@
 				<li><a target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php echo urlencode(get_the_permalink()); ?>" class="soc-SharePost-btn"> <i class="fa fa-fw fa-google-plus"></i></a></li>
 			</ul>
 			
-			<a class="nav-PostPrev"></a>
-			<a class="nav-PostNext"></a>
+			<div class="nav-PostNavigation">
+				<div class="nav-NextPost">
+					<?php previous_post_link('%link'); ?>
+				</div>
+				<div class="nav-PrevPost">
+					<?php next_post_link('%link'); ?>
+				</div>
+			</div>
+			
 		<?php endif; ?>
 		</footer>
-		
 	</article>
+	
 	
 <?php endwhile; else: ?>
 
@@ -109,5 +104,14 @@
 		<div class="ui-PostBody"></div>
 		<footer class="ui-PostFooter"></footer>
 	</article>
+
+<?php endif; ?>
+
+<?php if (is_home() || is_front_page() || is_archive()) : ?>
+
+<div class="nav-PageNavigation">
+	<div class="nav-PrevPosts"><?php next_posts_link( '<i class="fa fa-long-arrow-left"></i> Older Posts' ); ?></div>
+	<div class="nav-NextPosts"><?php previous_posts_link( 'Newer Posts <i class="fa fa-long-arrow-right"></i>' ); ?></div>
+</div>
 
 <?php endif; ?>
