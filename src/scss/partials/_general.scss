@@ -52,8 +52,6 @@ a {
 		& {
 			padding-right: 5%;
 			width: 100%;
-			// padding-right: 25px;
-			// width: 760px;
 		}
 	}
 	
@@ -155,7 +153,6 @@ a {
 			max-width: 60% !important;
 		}
 	}
-	
 }
 
 .ui-PostImage {
@@ -221,7 +218,7 @@ a {
 	}
 }
 
-.ui-Button--more {
+.nav-ReadMore {
 	background: transparent;
 	border: 1px solid $DARK_GREEN;
 	color: $DARK_GREEN;

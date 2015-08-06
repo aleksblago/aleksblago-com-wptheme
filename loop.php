@@ -19,7 +19,6 @@
 	} elseif (strpos($embed, 'vine.co')) {
 		$embedType = 'vine';
 	}
-	
 	?>
 
 	<article class="ui-Post">
@@ -35,7 +34,7 @@
 				<?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?>
 				<?php endif; ?>
 				
-			<?php elseif (is_home() || is_front_page() || is_archive()) : ?>
+			<?php elseif (is_home() || is_front_page() || is_archive() || is_search()) : ?>
 			
 				<?php echo ($embed !== '') ? $embed : ''; ?>
 				<?php if (has_post_thumbnail() && $embed === '') : ?>
@@ -72,7 +71,7 @@
 		
 		<footer class="ui-PostFooter">
 		<?php if (!is_singular()) : ?>
-			<a href="<?php the_permalink(); ?>" class="ui-Button--more">Read More</a>
+			<a href="<?php the_permalink(); ?>" class="nav-ReadMore">Read More</a>
 		<?php elseif(is_single()) : ?>
 			<ul class="soc-SharePost">
 				<li class="soc-SharePost-title">Share This Article</li>
@@ -107,7 +106,7 @@
 
 <?php endif; ?>
 
-<?php if (is_home() || is_front_page() || is_archive()) : ?>
+<?php if (is_home() || is_front_page() || is_archive() || is_search()) : ?>
 
 <div class="nav-PageNavigation">
 	<div class="nav-PrevPosts"><?php next_posts_link( '<i class="fa fa-long-arrow-left"></i> Older Posts' ); ?></div>

@@ -4,6 +4,11 @@
 				<h1 class="nav-Title"><a href="<?php bloginfo('url'); ?>"><span class="a">A</span><span class="b">B</span></a></h1>
 				<?php aleksblago_nav(); ?>
 			</header>
+			<div class="nav-Search">
+				<form role="search" method="get" class="nav-SearchForm" name="search" action="<?php echo home_url( '/' ); ?>">
+					<input type="text" name="s" class="nav-SearchInput" placeholder="Search for stuff...">
+				</form>	
+			</div>
 			<footer class="nav-Footer">
 				<ul class="nav-Social">
 					<li><a href="https://twitter.com/_aleksblago" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>

@@ -61,7 +61,7 @@ function my_css_attributes_filter( $var )
 
 function theme_styles_and_scripts()
 {
-	wp_enqueue_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', array(), '4.2.3');
+	wp_enqueue_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', array(), '4.2.3');
 	wp_enqueue_style('font-oswald', 'http://fonts.googleapis.com/css?family=Oswald', array(), '4.2.3');
 	wp_enqueue_style('font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0');
 	wp_register_script('aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true);
