@@ -184,6 +184,7 @@ a {
 	
 	& a {
 		font-weight: bold;
+		text-decoration: underline;
 	}
 	
 	& img {
@@ -213,6 +214,10 @@ a {
 	& p {
 		line-height: 180%;
 		margin-bottom: 40px;
+	}
+	
+	& blockquote p {
+		margin: 0;
 	}
 }
 

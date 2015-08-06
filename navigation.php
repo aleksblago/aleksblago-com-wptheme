@@ -12,7 +12,7 @@
 					<li><a href="https://github.com/aleksblago" target="_blank"><i class="fa fa-fw fa-github-alt"></i></a></li>
 					<li><a href="http://codepen.io/aleksblago/" target="_blank"><i class="fa fa-fw fa-codepen"></i></a></li>
 				</ul>
-				&copy; 2005-<?php echo date('Y'); ?>
+				&copy; 2004-<?php echo date('Y'); ?>
 			</footer>
 			<div class="nav-Background"></div>
 		</nav>
