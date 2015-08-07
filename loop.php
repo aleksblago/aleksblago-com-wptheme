@@ -53,9 +53,10 @@
 			// IF we're on the default homepage, on a dynamic blog page, on an archive page, or on a single post page.
 			// Basically, exclude the author and date on a static homepage.
 		?>
-		<?php if ((is_front_page() && is_home()) || is_home() || is_archive() || is_single()) : ?>
+		<?php if ((is_front_page() && is_home()) || is_home() || is_archive() || is_search() || is_single()) : ?>
 			<div class="ui-PostMeta">
 				<span><i class="fa fa-fw fa-user"></i> <?php the_author_posts_link(); ?></span>
+				<span><i class="fa fa-fw fa-clock-o"></i> <?php echo do_shortcode('[est_time]'); ?></span>
 				<span><i class="fa fa-fw fa-calendar"></i> <?php the_date(); ?></span>
 			</div>
 		<?php endif; ?>

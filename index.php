@@ -4,7 +4,7 @@
 			
 			<?php if (is_archive()) : ?>
 			
-			<div class="ui-ArchiveTitle"><?php the_archive_title(); ?></div>
+			<div class="ui-ArchiveTitle"><span><?php the_archive_title(); ?></span></div>
 			
 			<?php elseif (is_search()) : ?>
 			
