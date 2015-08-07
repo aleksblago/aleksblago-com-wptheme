@@ -22,7 +22,7 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	
 .nav-Intro {
 	@extend %CLEAR;
-	padding-bottom: 100px;
+	padding-bottom: 200px;
 	
 	@media screen and (max-width: 800px) {
 		& {

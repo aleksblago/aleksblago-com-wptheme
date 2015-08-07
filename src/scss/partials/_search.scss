@@ -29,13 +29,26 @@
 	}
 	
 	&Input {
+		background: transparent;
+		border: 1px solid $DARK_GREY;
+		border-radius: 2px;
 		box-sizing: border-box;
+		color: $WHITE;
 		display: inline-block;
 		font-family: $SERIF_FONT;
 		font-size: 14px;
 		outline: 0;
-		padding: 6px 12px;
-		width: 100%;
+		padding: 10px 14px;
+		width: 75px;
+		
+		transition:
+			background $ANIM_SPEED,
+			width $ANIM_SPEED;
+		
+		&:focus {
+			background: $DARK_GREY;
+			width: 100%;
+		}
 	}
 	
 	@media screen and (max-width: 800px) {
@@ -49,7 +62,11 @@
 			}
 			
 			&Input {
-				width: 180px;
+				width: 75px;
+				
+				&:focus {
+					width: 180px;
+				}
 			}
 		}
 		
