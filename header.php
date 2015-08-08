@@ -48,6 +48,6 @@
 	<?php endif; ?>
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
 	<div class="ui-Container">
 		<?php get_template_part('navigation'); ?>

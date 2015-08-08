@@ -21,7 +21,7 @@
 	}
 	?>
 
-	<article class="ui-Post">
+	<article class="ui-Post" itemscope itemtype="http://schema.org/BlogPosting">
 
 		<header class="ui-PostHeader">
 			
@@ -31,23 +31,23 @@
 				<?php echo ($embed !== '') ? $embed : ''; ?>
 				
 				<?php if (has_post_thumbnail() && $embed === '') : ?>
-				<?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?>
+				<?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?>
 				<?php endif; ?>
 				
 			<?php elseif (is_home() || is_front_page() || is_archive() || is_search()) : ?>
 			
 				<?php echo ($embed !== '') ? $embed : ''; ?>
 				<?php if (has_post_thumbnail() && $embed === '') : ?>
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage')); ?></a>
+				<a href="<?php the_permalink(); ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?></a>
 				<?php endif; ?>
 				
 			<?php endif; ?>
 			</div>
 			
 		<?php if (is_singular()) : ?>
-			<h1><?php the_title(); ?></h1>
+			<h1 itemprop="name headline"><?php the_title(); ?></h1>
 		<?php else : ?>
-			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+			<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
 		<?php endif; ?>
 		<?php
 			// IF we're on the default homepage, on a dynamic blog page, on an archive page, or on a single post page.
@@ -62,15 +62,15 @@
 			$category_link = get_category_link( $category_id );
 		?>
 			<div class="ui-PostMeta">
-				<span><i class="fa fa-fw fa-user"></i> <?php the_author_posts_link(); ?></span>
-				<span><i class="fa fa-fw fa-folder-open"></i> <a href="<?php echo $category_link; ?>" title="<?php the_title(); ?> is categorized in <?php echo $the_category; ?>"><?php echo $the_category; ?></a></span>
+				<span itemprop="author" itemscope itemtype="http://schema.org/Person"><i class="fa fa-fw fa-user"></i> <a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>" itemprop="url" rel="author"><span itemprop="name"><?php the_author(); ?></span></a></span>
+				<span><i class="fa fa-fw fa-folder-open"></i> <a href="<?php echo $category_link; ?>" title="<?php the_title(); ?> is categorized in <?php echo $the_category; ?>" itemprop="articleSection"><?php echo $the_category; ?></a></span>
 				<span><i class="fa fa-fw fa-clock-o"></i> <?php echo do_shortcode('[est_time]'); ?></span>
-				<span><i class="fa fa-fw fa-calendar"></i> <?php the_date(); ?></span>
+				<span><i class="fa fa-fw fa-calendar"></i> <span itemprop="datePublished"><?php the_date(); ?></span></span>
 			</div>
 		<?php endif; ?>
 		</header>
 		
-		<div class="ui-PostBody<?php echo (in_category('quotes')) ? ' Quotes' : ''; ?>">
+		<div class="ui-PostBody<?php echo (in_category('quotes')) ? ' Quotes' : ''; ?>"<?php echo is_singular() ? ' itemprop="articleBody"' : ' itemprop="description"'; ?>>
 			<?php if (is_singular()) : ?>
 			<?php the_content(); ?>
 			<?php else : ?>
@@ -80,7 +80,7 @@
 		
 		<footer class="ui-PostFooter">
 		<?php if (!is_singular()) : ?>
-			<a href="<?php the_permalink(); ?>" class="nav-ReadMore">Read More</a>
+			<a href="<?php the_permalink(); ?>" class="nav-ReadMore" itemprop="url">Read More</a>
 		<?php elseif(is_single()) : ?>
 			<ul class="soc-SharePost">
 				<li class="soc-SharePost-title">Share This Article</li>
