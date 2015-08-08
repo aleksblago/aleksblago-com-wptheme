@@ -2,15 +2,11 @@
 
 		<div class="ui-ContentContainer">
 			
-			<?php if (is_archive()) : ?>
-			
+		<?php if (is_archive()) : ?>
 			<div class="ui-ArchiveTitle"><span><?php the_archive_title(); ?></span></div>
-			
-			<?php elseif (is_search()) : ?>
-			
+		<?php elseif (is_search()) : ?>
 			<div class="ui-SearchTitle"><span>Search Results <strong>for</strong>: <?php the_search_query(); ?></span></div>
-			
-			<?php endif; ?>
+		<?php endif; ?>
 			
 			<?php get_template_part('loop'); ?>
 		

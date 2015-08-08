@@ -380,3 +380,46 @@ a {
 		}
 	}
 }
+
+.ui-TextQuote {
+	background: $BLACK;
+	box-sizing: border-box;
+	color: $WHITE;
+	display: block;
+	font-style: italic;
+	font-size: 34px;
+	line-height: 160%;
+	margin: 0;
+	padding: 60px 60px 30px 60px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	
+	& cite {
+		background: $TRUE_BLACK;
+		border-radius: 2px;
+		color: $LIGHT_GREY;
+		display: inline-block;
+		font-family: $SANS_SERIF_FONT;
+		font-size: 14px;
+		font-style: normal;
+		text-transform: uppercase;
+		margin: 60px 0 0 0;
+		padding: 0 20px;
+	}
+	
+	&:hover {
+		color: $WHITE;
+	}
+}
+
+.ui-ImageFeature {
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	& > img {
+		display: block;
+		width: 100%;
+	}
+}

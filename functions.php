@@ -91,13 +91,29 @@ function my_custom_excerpt( $length )
 	return 70;
 }
 
-// YouTube and Vimeo Meta Box
-add_aleksblago_meta_box('featured-embed', array(
-	'title'     => 'Featured Embed',
+// Add textarea for embed code input.
+add_aleksblago_meta_box('featured-content', array(
+	'title'     => 'Featured Content',
 	'pages'     => array('post'),
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
+		array(
+			'name' => 'Text Quote',
+			'id' => 'text-quote',
+			'default' => '',
+			'placeholder' => '',
+			'desc' => 'Chcek the box to convert this post into a "Text Quote" post.',
+			'type' => 'checkbox'
+		),
+		array(
+			'name' => 'Image Only',
+			'id' => 'image-only',
+			'default' => '',
+			'placeholder' => '',
+			'desc' => 'Chcek the box to convert this post into an "Image Only" post.',
+			'type' => 'checkbox'
+		),
 		array(
 			'name' => 'Embed Code:',
 			'id' => 'featured-embed',
