@@ -8,7 +8,7 @@
 			
 			<?php elseif (is_search()) : ?>
 			
-			<div class="ui-SearchTitle"><span>Search Results for: <?php the_search_query(); ?></span></div>
+			<div class="ui-SearchTitle"><span>Search Results <strong>for</strong>: <?php the_search_query(); ?></span></div>
 			
 			<?php endif; ?>
 			

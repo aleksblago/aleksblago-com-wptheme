@@ -254,15 +254,37 @@ a {
 	text-align: center;
 }
 
+.ui-PostTags {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 40px 0;
+	
+	& > a {
+		font-style: italic;
+		font-weight: normal;
+		text-transform: capitalize;
+	}
+	
+	&::before {
+		border-top: 5px solid $LIGHT_GREY;
+		content: '';
+		display: block;
+		margin: 0 auto 20px;
+		opacity: .75;
+		width: 50px;
+	}
+}
+
 .soc-SharePost {
 	display: block;
-	font-size: 26px;
+	font-size: 30px;
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
 	
 	& > li {
 	 	display: inline-block;
+	 	margin: 0;
 	 	padding: 0 10px;
 	}
 	
