@@ -382,7 +382,8 @@ a {
 }
 
 .ui-TextQuote {
-	background: $BLACK;
+	background-image: $PATTERN_BG;
+	background-color: $BLACK;
 	box-sizing: border-box;
 	color: $WHITE;
 	display: block;
@@ -398,18 +399,25 @@ a {
 	& cite {
 		background: $TRUE_BLACK;
 		border-radius: 2px;
-		color: $LIGHT_GREY;
+		color: $WHITE;
 		display: inline-block;
 		font-family: $SANS_SERIF_FONT;
 		font-size: 14px;
 		font-style: normal;
+		opacity: .5;
 		text-transform: uppercase;
 		margin: 60px 0 0 0;
 		padding: 0 20px;
+		
+		transition: opacity $ANIM_SPEED;
 	}
 	
 	&:hover {
 		color: $WHITE;
+		
+		& cite {
+			opacity: 1;
+		}
 	}
 }
 
