@@ -4,7 +4,7 @@ $embed = aleksMetaBox::get('featured-embed');
 $image_only = aleksMetaBox::get('image-only') != '' ? true : false;
 $text_quote = aleksMetaBox::get('text-quote') != '' ? true : false;
 $embed_type = '';
-$thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+$thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' );
 $has_both = ($embed !== '' && has_post_thumbnail());
 
 if (strpos($embed, 'twitter.com')) {
@@ -27,11 +27,15 @@ if (strpos($embed, 'twitter.com')) {
 	
 	<?php if (has_post_thumbnail() && $embed === '') : ?>
 	
-		<?php if (is_singular()) : ?>
+		<?php if (is_singular() && in_category('infographics')) : // Link image to the full sized image when its an infographic. ?>
+		
+			<a href="<?php echo $thumbnail_url; ?>"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?></a>
+			
+		<?php elseif (is_singular()) : // Regular post image ?>
 		
 			<?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?>
 			
-		<?php else : ?>
+		<?php else : // We're on an archive page so link to the article. ?>
 		
 			<a href="<?php the_permalink(); ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?></a>
 			
