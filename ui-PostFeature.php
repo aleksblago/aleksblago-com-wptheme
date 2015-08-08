@@ -27,7 +27,7 @@ if (strpos($embed, 'twitter.com')) {
 	
 	<?php if (has_post_thumbnail() && $embed === '') : ?>
 	
-		<?php if (!is_singular()) : ?>
+		<?php if (is_singular()) : ?>
 		
 			<?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?>
 			
