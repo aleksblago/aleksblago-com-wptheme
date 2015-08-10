@@ -1,15 +1,11 @@
 (function() {
 	
 	var menuBtn = document.querySelector('.nav-MobileMenu'),
-		navBar = document.querySelector('.nav-Links'),
-		navSearch = document.querySelector('.nav-Search'),
-		navFooter = document.querySelector('.nav-Footer');
+		navigation = document.querySelector('.nav-Primary');
 	
 	menuBtn.addEventListener('click', function() {
 		
-		navBar.classList.toggle('active');
-		navSearch.classList.toggle('active');
-		navFooter.classList.toggle('active');
+		navigation.classList.toggle('active');
 		
 	}, false);
 	

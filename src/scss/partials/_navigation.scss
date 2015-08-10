@@ -15,7 +15,11 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		& {
 			padding: 0 30px;
 			position: relative;
+			overflow: hidden;
 			width: 100%;
+			height: 140px;
+			
+			transition: .1s;
 		}
 	}
 }
@@ -135,12 +139,10 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		}
 		
 		& > li {
-			opacity: 1;
-			height: 0;
+			border-top: 1px solid rgba(0,0,0,0);
+			opacity: 0;
 			text-align: left;
 			width: 200%;
-			
-			transform: opacity .3s, height .3s;
 		}
 		
 		& > .nav-MobileMenu {
@@ -150,40 +152,21 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			display: block;
 			opacity: 1;
 			height: auto;
+			max-height: 100%;
 			line-height: 48px;
 			margin-top: 50px;
 			text-align: center;
 			width: 42px;
-			transform: opacity .3s, height .3s;
+			
+			transition: none;
 			
 			&::before {
 				content: '\f0c9';
 				color: $WHITE;
-				font-family: $FONT_ICONS;
-				font-size: 40px;
-			}
-		}
-	
-		&.active {
-			& > li {
-				border-top: 1px solid rgba(255,255,255,0.15);
 				display: block;
 				opacity: 1;
-				height: 100%;
-				vertical-align: bottom;
-				
-				&:nth-child(2) {
-					margin-top: 30px;
-				}
-				
-				& > a {
-					display: inline-block;
-					padding: 10px 30px 10px 0;
-				}
-			}
-			
-			& > .nav-MobileMenu {
-				border: 0;
+				font-family: $FONT_ICONS;
+				font-size: 40px;
 			}
 		}
 	}
@@ -194,7 +177,9 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	
 	@media screen and (max-width: 800px) {
 		& {
-			display: none;
+			// ORIG display: none;
+			opacity: 0;
+			max-height: 0;
 		}
 	}
 	
@@ -225,19 +210,67 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			}
 		}
 	}
+}
+
+.nav-Primary.active {
+	height: 100%;
+	transition: height $ANIM_SPEED;
 	
-	&.active {
-		
-		@media screen and (max-width: 800px) {
-			& {
+	@media screen and (max-width: 800px) {
+			
+		.nav-Links {
+			& > li {
+				border-top: 1px solid rgba(255,255,255,.15);
 				display: block;
-				margin: 25px 0 30px 0;
+				opacity: 1;
+				vertical-align: bottom;
+			
+				transition:
+					opacity $ANIM_DELAYED,
+					border-top $ANIM_DELAYED;
+				
+				&:nth-child(2) {
+					margin-top: 40px;
+				}
+				
+				& > a {
+					display: inline-block;
+					padding: 15px 30px 15px 0;
+				}
 			}
 			
-			& > .nav-Social > li {
-				font-size: 22px;
-				margin: 0 0 10px 5px;
+			& > .nav-MobileMenu {
+				border: 0;
 			}
 		}
+	
+		.nav-Footer {
+			
+			@media screen and (max-width: 800px) {
+				& {
+					// ORIG display: block;
+					opacity: 1;
+					max-height: 9999%;
+					margin: 25px 0 30px 0;
+					
+					transition: opacity $ANIM_DELAYED;
+				}
+				
+				& > .nav-Social > li {
+					font-size: 22px;
+					margin: 0 0 10px 5px;
+				}
+			}
+		}
+		
+		.nav-Search {
+			// ORIG display: block;
+			opacity: 1;
+			margin: 60px 0 0 0;
+			max-height: 9999%;
+			transition: opacity $ANIM_DELAYED;
+		}
+		
 	}
+	
 }
