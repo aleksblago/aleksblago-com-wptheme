@@ -45,8 +45,12 @@
 		
 	</article>
 	
-	<?php comments_template('/ui-Comments.php'); ?>
+	<?php if (!$image_only && !$text_quote) : ?>
 	
+		<?php comments_template('/ui-Comments.php'); ?>
+		
+	<?php endif; ?>
+		
 <?php endwhile; else: ?>
 
 	<article class="ui-Post">

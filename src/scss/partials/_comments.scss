@@ -1,9 +1,14 @@
 .ui-Comments {
 	background: $WHITE;
 	box-shadow: $SHADOW;
+	display: block;
 	margin-bottom: 40px;
 	min-height: 100px;
-	padding: 40px 12% 0 12%;
+	padding: 70px 12% 0 12%;
+	
+	& p {
+		margin-bottom: 40px;
+	}
 }
 
 .ui-CommentsClosed {

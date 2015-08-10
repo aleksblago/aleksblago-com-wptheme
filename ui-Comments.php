@@ -17,7 +17,7 @@
 
 <!-- You can start editing here. -->
 
-<div class="ui-Comments">
+<section class="ui-Comments">
 	
 <?php if ( have_comments() ) : ?>
 	
@@ -36,12 +36,15 @@
 
 	<?php if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
+		<p>No comments yet.</p>
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
 		<!--<p class="nocomments">Comments are closed.</p>-->
+		<p>Comments are closed</p>
 
 	<?php endif; ?>
+	
 <?php endif; ?>
 
 
@@ -103,12 +106,8 @@ $args = array(
   ),
 );
 
-comment_form($args); ?>
+comment_form($args);
 
-<?php else : ?>
+endif; // if you delete this the sky will fall on your head ?>
 
-<div class="ui-CommentsClosed">Comments are now closed.</div>
-
-<?php endif; // if you delete this the sky will fall on your head ?>
-
-</div>
+</section>
