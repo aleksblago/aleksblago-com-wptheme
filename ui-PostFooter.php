@@ -7,7 +7,7 @@
 <?php elseif(is_single()) : ?>
 	
 	<?php if (has_tag()) : ?>
-	<div class="ui-PostTags"><i class="fa fa-fw fa-tags"></i> <?php the_tags('Tags: ', ', ', ''); ?></div>
+	<div class="ui-PostTags"><i class="fa fa-fw fa-tags"></i> Tags: <span itemprop="keywords"><?php the_tags('',', ',''); ?></span></div>
 	<?php endif; ?>	
 	
 	<ul class="soc-SharePost">
