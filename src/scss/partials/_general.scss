@@ -84,12 +84,11 @@ a {
 }
 
 .ui-Post,
-.ui-AuthorContainer {
+.ui-Author {
 	background: $WHITE;
 	margin-bottom: 40px;
 	min-height: 100px;
 	box-shadow: $SHADOW;
-	// box-shadow: 0 0 2px 1px rgba(0,0,0,0.06), 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .ui-PostHeader {
@@ -173,7 +172,7 @@ a {
 		padding: 0 8px;
 	}
 }
-	
+
 .ui-PostBody {
 	font-family: $SERIF_FONT;
 	padding: 40px 12% 0 12%;

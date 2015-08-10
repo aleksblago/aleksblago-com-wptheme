@@ -1,0 +1,13 @@
+.ui-Comments {
+	background: $WHITE;
+	box-shadow: $SHADOW;
+	margin-bottom: 40px;
+	min-height: 100px;
+	padding: 40px 12% 0 12%;
+}
+
+.ui-CommentsClosed {
+	font-style: italic;
+	padding: 0 0 60px 0;
+	text-align: center;
+}

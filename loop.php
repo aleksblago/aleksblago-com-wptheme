@@ -21,12 +21,12 @@
 			
 			<?php get_template_part('ui-PostFeature'); ?>
 			
-		<?php if (is_singular()) : ?>
-			<h1 itemprop="name headline"><?php the_title(); ?></h1>
-		<?php else : ?>
-			<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
-		<?php endif; ?>
-		
+			<?php if (is_singular()) : ?>
+				<h1 itemprop="name headline"><?php the_title(); ?></h1>
+			<?php else : ?>
+				<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
+			<?php endif; ?>
+			
 			<?php get_template_part('ui-PostMeta'); ?>
 
 		</header>
@@ -44,6 +44,8 @@
 	<?php endif; ?>
 		
 	</article>
+	
+	<?php comments_template('/ui-Comments.php'); ?>
 	
 <?php endwhile; else: ?>
 
