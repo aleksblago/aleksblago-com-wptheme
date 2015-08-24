@@ -3,16 +3,146 @@
 	box-shadow: $SHADOW;
 	display: block;
 	margin-bottom: 40px;
-	min-height: 100px;
-	padding: 70px 12% 0 12%;
+	padding: 70px 12%;
 	
 	& p {
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
+	
+	& .submit {
+		@extend %PRIMARY_BUTTON;
+		margin-top: 25px;
+	}
+	
+	& .comment-notes {
+		float: right;
+		font-size: 16px;
+		margin-top: 27px;
+	}
+}
+
+.ui-CommentsTitle {
+	margin: 0;
+}
+
+.comments-list {
+	margin: 40px 0 0 0;
+}
+
+.comments-list .comment:last-child {
+	margin-bottom: 1.4em;
 }
 
 .ui-CommentsClosed {
 	font-style: italic;
 	padding: 0 0 60px 0;
 	text-align: center;
+}
+
+.comment-header {
+	margin-bottom: 20px;
+}
+
+.comment-reply-title {
+	position: relative;
+	text-transform: capitalize;
+	
+	& small {
+		display: block;
+		margin-top: 15px;
+	}
+	
+	#cancel-comment-reply-link {
+		font-size: 18px;
+		
+		&::before {
+			content: '\f057';
+			display: inline-block;
+			font-family: $FONT_ICONS;
+			margin-right: 5px;
+		}
+		
+		&:hover {
+			
+			&::before {
+				content: '\f05c';
+			}
+			
+		}
+	}
+}
+
+
+.gravatar {
+	border-radius: 2px;
+	float: left;
+	margin-right: 1em;
+	overflow: hidden;
+	
+	& > img {
+		display: block;
+	}
+}
+
+.comment {
+	margin-bottom: 40px;
+}
+
+.comment-content {
+	@extend %CLEAR;
+}
+
+.comment-author {
+	text-transform: capitalize;
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	
+	.comment-time {
+		text-decoration: none;
+		color: $MID_GREY;
+		
+		& span {
+			text-transform: lowercase;
+		}
+	}
+}
+
+.child-comments {
+	margin: 30px 0 0 1.4em;
+	padding-left: 1.4em;
+	border-left: 1px dotted $LIGHT_GREY;
+	border-bottom: 1px dotted $LIGHT_GREY;
+}
+
+.bypostauthor {
+	background: $SUPER_LIGHT_GREY;
+	border-radius: 3px;
+	padding: 15px;
+}
+
+.comment-meta-item {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.ui-CommentsLabel {
+	display: block;
+	margin: 10px 0 5px 0;
+}
+
+.ui-CommentsInput {
+	border: 1px solid $LIGHT_GREY;
+	border-radius: 2px;
+	box-sizing: border-box;
+	display: block;
+	font-family: $SERIF_FONT;
+	font-size: 16px;
+	outline: none;
+	padding: 8px 10px;
+	width: 100%;
+	
+	&:hover,
+	&:focus {
+		border: 1px solid $DARK_GREEN;
+	}
 }

@@ -7,3 +7,36 @@
     }
     &:after { clear: both; }
 }
+
+%PRIMARY_BUTTON {
+	background: transparent;
+	border: 1px solid $DARK_GREEN;
+	color: $DARK_GREEN;
+	cursor: pointer;
+	display: block;
+	font-family: $SANS_SERIF_FONT;
+	font-size: 16px;
+	outline: none;
+	padding: 6px 0;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: 120px;
+	
+	border-radius: 2px;
+	
+	transition: background $ANIM_SPEED, border $ANIM_SPEED, color $ANIM_SPEED;
+	
+	&:hover {
+		background: $MID_GREEN;
+		border: 1px solid $MID_GREEN;
+		color: $WHITE;
+	}
+	
+	&:active {
+		background: $DARK_GREEN;
+		border: 1px solid $DARK_GREEN;
+		color: $WHITE;
+		transition: none;
+	}
+}

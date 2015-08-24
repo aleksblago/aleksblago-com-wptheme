@@ -217,34 +217,8 @@ a {
 }
 
 .nav-ReadMore {
-	background: transparent;
-	border: 1px solid $DARK_GREEN;
-	color: $DARK_GREEN;
-	display: block;
-	font-family: $SANS_SERIF_FONT;
-	font-size: 16px;
-	padding: 6px 0;
+	@extend %PRIMARY_BUTTON;
 	margin: 0 auto;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	width: 120px;
-	
-	border-radius: 2px;
-	
-	transition: background $ANIM_SPEED, border $ANIM_SPEED, color $ANIM_SPEED;
-	
-	&:hover {
-		background: $MID_GREEN;
-		border: 1px solid $MID_GREEN;
-		color: $WHITE;
-	}
-	
-	&:active {
-		background: $DARK_GREEN;
-		border: 1px solid $DARK_GREEN;
-		transition: none;
-	}
 }
 
 .ui-PostFooter {
@@ -258,9 +232,12 @@ a {
 	font-weight: bold;
 	margin: 0 0 40px 0;
 	
-	& > a {
-		font-style: italic;
+	& > span {
 		font-weight: normal;
+	}
+	
+	& > span > a {
+		font-style: italic;
 		text-transform: capitalize;
 	}
 	

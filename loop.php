@@ -45,7 +45,7 @@
 		
 	</article>
 	
-	<?php if (!$image_only && !$text_quote) : ?>
+	<?php if (is_single() && !$image_only && !$text_quote) : ?>
 	
 		<?php comments_template('/ui-Comments.php'); ?>
 		
