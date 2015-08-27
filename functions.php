@@ -63,7 +63,7 @@ function theme_styles_and_scripts()
 {
 	wp_enqueue_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', array(), '4.2.3');
 	wp_enqueue_style('font-oswald', 'http://fonts.googleapis.com/css?family=Oswald', array(), '4.2.3');
-	wp_enqueue_style('font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0');
+	wp_enqueue_style('font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '4.4.0');
 	wp_register_script('aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true);
 	wp_enqueue_script('aleksblago');
 }
@@ -158,7 +158,6 @@ class comment_walker extends Walker_Comment {
 		$GLOBALS['comment_depth'] = $depth;
 		$GLOBALS['comment'] = $comment;
 		$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); 
-		
 	?>
 
 		<article <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
@@ -168,13 +167,11 @@ class comment_walker extends Walker_Comment {
 				<a class="comment-time" href="<?php the_permalink(); ?>#comment-<?php comment_ID() ?>"><time datetime="<?php comment_date('Y-m-d') ?>T<?php comment_time('H:iP') ?>" itemprop="datePublished"><?php comment_date('F j, Y') ?> @ <span><?php comment_time() ?></span></time></a>
 			</h5>
 			<div class="comment-content post-content" itemprop="text">
-				<figure class="gravatar"><?php echo get_avatar( $comment->comment_author_email, 64, '/img/default-avatar.png', get_comment_author() ); ?></figure>
+				<figure class="gravatar"><?php echo get_avatar( $comment->comment_author_email, 50, 'http://www.digitalyouthsummit.pk/wp-content/uploads/2015/05/default-avatar.png', get_comment_author() ); ?></figure>
 				<?php comment_text() ?>
 			</div>
-			<div class="comment-footer">
-				<?php edit_comment_link('<span class="comment-meta-item">Edit</span>','',''); ?></span>
-				<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '<span class="comment-meta-item">', 'after' => '</span>'))); ?>
-			</div>
+			<?php edit_comment_link('<span class="comment-meta-item">Edit</span>','',''); ?></span>
+			<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => '<span class="comment-meta-item">', 'after' => '</span>'))); ?>
 
 	<?php }
 

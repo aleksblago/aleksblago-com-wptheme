@@ -24,7 +24,7 @@
 		
 	</article>
 	
-	<?php if (is_single() && !$image_only) : ?>
+	<?php if (is_single()) : ?>
 	
 		<?php comments_template('/ui-Comments.php'); ?>
 		

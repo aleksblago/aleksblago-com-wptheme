@@ -6,7 +6,11 @@
 	padding: 70px 12%;
 	
 	& p {
-		margin-bottom: 20px;
+		margin: 0 0 15px 0;
+		
+		&:last-child {
+			margin: 0;
+		}
 	}
 	
 	& .submit {
@@ -27,10 +31,10 @@
 
 .comments-list {
 	margin: 40px 0 0 0;
-}
-
-.comments-list .comment:last-child {
-	margin-bottom: 1.4em;
+	
+	& .comment:last-child {
+		margin: 0;
+	}
 }
 
 .ui-CommentsClosed {
@@ -48,8 +52,8 @@
 	text-transform: capitalize;
 	
 	& small {
-		display: block;
-		margin-top: 15px;
+		display: inline-block;
+		float: right;
 	}
 	
 	#cancel-comment-reply-link {
@@ -61,22 +65,31 @@
 			font-family: $FONT_ICONS;
 			margin-right: 5px;
 		}
-		
-		&:hover {
-			
-			&::before {
-				content: '\f05c';
-			}
-			
-		}
 	}
 }
 
+.comment-reply-link::before {
+	content: '\f075';
+}
+
+.comment-edit-link::before {
+	content: '\f040';
+}
+
+.comment-reply-link,
+.comment-edit-link {
+	&::before {
+		display: inline-block;
+		font-family: $FONT_ICONS;
+		margin-right: 7px;
+		font-size: 16px;
+	}
+}
 
 .gravatar {
 	border-radius: 2px;
 	float: left;
-	margin-right: 1em;
+	margin: 0 1em 0 0;
 	overflow: hidden;
 	
 	& > img {
@@ -85,7 +98,7 @@
 }
 
 .comment {
-	margin-bottom: 40px;
+	margin: 0 0 40px 0;
 }
 
 .comment-content {
@@ -108,10 +121,15 @@
 }
 
 .child-comments {
-	margin: 30px 0 0 1.4em;
-	padding-left: 1.4em;
+	margin: 15px 0 0 1.4em;
+	padding: 15px 0 0 1.4em;
 	border-left: 1px dotted $LIGHT_GREY;
 	border-bottom: 1px dotted $LIGHT_GREY;
+	
+	& .comment,
+	& .comment:last-child {
+		margin-bottom: 1.4em;
+	}
 }
 
 .bypostauthor {
@@ -122,7 +140,7 @@
 
 .comment-meta-item {
 	display: inline-block;
-	margin-right: 20px;
+	margin: 20px 20px 0 0;
 }
 
 .ui-CommentsLabel {
