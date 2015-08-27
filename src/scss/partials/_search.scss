@@ -52,6 +52,7 @@
 			background $ANIM_SPEED,
 			width $ANIM_SPEED;
 		
+		&:hover,
 		&:focus {
 			background: $DARK_GREY;
 			width: 100%;
