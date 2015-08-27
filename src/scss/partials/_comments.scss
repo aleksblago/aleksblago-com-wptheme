@@ -141,6 +141,8 @@
 	padding: 8px 10px;
 	width: 100%;
 	
+	transition: border $ANIM_SPEED;
+	
 	&:hover,
 	&:focus {
 		border: 1px solid $DARK_GREEN;
