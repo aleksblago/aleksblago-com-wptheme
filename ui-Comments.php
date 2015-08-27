@@ -4,19 +4,15 @@
  * @subpackage Default_Theme
  */
 
-// Do not delete these lines
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-
-	if ( post_password_required() ) { ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-	<?php
-		return;
-	}
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	die ('Please do not load this page directly. Thanks!');
 ?>
 
-
-
+<?php
+	if ( post_password_required() ) : ?>
+	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+	
+<?php return; endif; ?>
 	
 <?php if ( comments_open() ) : ?>
 <section class="ui-Comments">
@@ -26,12 +22,12 @@
 $args = array(
 	'id_form'           => 'commentform',
 	'id_submit'         => 'submit',
-	'title_reply'       => __( 'Leave a Comment' ),
+	'title_reply'       => __( 'Leave a Reply' ),
 	'title_reply_to'    => __( 'Replying to %s' ),
 	'cancel_reply_link' => __( 'Cancel' ),
-	'label_submit'      => __( 'Post Comment' ),
+	'label_submit'      => __( 'Post a Reply' ),
 
-	'comment_field' =>  '<label class="ui-CommentsLabel">Your Comments</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="ui-CommentsInput"></textarea>',
+	'comment_field' =>  '<label class="ui-CommentsLabel" title="Please share your thoughts, we would love to hear them!">Your Comments</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="ui-CommentsInput"></textarea>',
 
 	'must_log_in' => '<p class="must-log-in">' .
 	sprintf(
@@ -54,15 +50,15 @@ $args = array(
   'fields' => apply_filters( 'comment_form_default_fields', array(
 
 		'author' =>
-			'<label class="ui-CommentsLabel" for="author">Name <span class="required">*</span></label>'.
+			'<label class="ui-CommentsLabel" for="author" title="Your name is required to post a comment.">Name <span class="required">*</span></label>'.
 			'<input name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" class="ui-CommentsInput" />',
 			
 		'email' =>
-			'<label class="ui-CommentsLabel" for="email">Email Address <span class="required">*</span></label>'.
+			'<label class="ui-CommentsLabel" for="email" title="Your email address is required to post a comment.">Email Address <span class="required">*</span></label>'.
 			'<input name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" class="ui-CommentsInput" />',
 			
 		'url' =>
-			'<label class="ui-CommentsLabel" for="url">Website URL</label>'.
+			'<label class="ui-CommentsLabel" for="url" title="If you would like to share your website url publicly, enter it here.">Website URL</label>'.
 			'<input name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" class="ui-CommentsInput" />'
 		)
   
@@ -74,10 +70,9 @@ comment_form($args); ?>
 </section>
 <?php endif; // if you delete this the sky will fall on your head ?>
 
-	
 <section class="ui-Comments">
 	
-	<h4 class="ui-CommentsTitle"><?php comments_number('No Comments', 'One Comment', '% Comments');?> on "<?php the_title(); ?>"</h4>
+	<h4 class="ui-CommentsTitle"><?php comments_number('No comments yet', 'One comment', '% comments');?> on "<?php the_title(); ?>"</h4>
 
 	<?php if ( have_comments() ) : ?>
 	
@@ -95,11 +90,11 @@ comment_form($args); ?>
 	
 	<?php if ( comments_open() && !have_comments() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
-		<p>No comments yet.</p>
+		<p>Be the first to share your thoughts!</p>
 		
 	<?php elseif ( !comments_open() ) : ?>
 
-		<p>Comments are closed now.</p>
+		<p>Comments are now closed.</p>
 		
 	<?php endif; ?>
 	
