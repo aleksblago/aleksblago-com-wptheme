@@ -49,19 +49,24 @@
 		width: 75px;
 		
 		transition:
-			background $ANIM_SPEED,
-			width $ANIM_SPEED;
+			background $ANIM_SPEED ease-in-out 0s,
+			width $ANIM_SPEED ease-in-out 0s;
 		
 		&:hover,
 		&:focus {
 			background: $DARK_GREY;
 			width: 100%;
 		}
+		
+		&:hover {
+			transition:
+				background $ANIM_SPEED ease-in-out $ANIM_SPEED,
+				width $ANIM_SPEED ease-in-out $ANIM_SPEED;
+		}
 	}
 	
 	@media screen and (max-width: 800px) {
 		& {
-			// ORIG display: none;
 			opacity: 0;
 			position: relative;
 			max-height: 0;
