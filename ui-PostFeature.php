@@ -17,7 +17,7 @@ if (strpos($embed, 'twitter.com')) {
 	$embed_type = 'vine';
 }
 
-$thumbnail_as_background = ($has_both && $embed_type != 'video' && $embed_type != 'codepen') ? 'style="background: url('. $thumbnail_url .') top center;"' : '';
+$thumbnail_as_background = ($has_both && $embed_type != 'video' && $embed_type != 'codepen') ? 'style="background: url('. $thumbnail_url .') top center; background-size: cover;"' : '';
 
 ?>
 
