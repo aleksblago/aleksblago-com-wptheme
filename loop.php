@@ -15,37 +15,16 @@
 		<?php get_template_part('ui-TextQuote'); ?>
 	<?php endif; ?>
 	
+	<?php // IF we have a regular article... ?>
 	<?php if (!$image_only && !$text_quote) : ?>
-		
-		<header class="ui-PostHeader">
-			
-			<?php get_template_part('ui-PostFeature'); ?>
-			
-			<?php if (is_singular()) : ?>
-				<h1 itemprop="name headline"><?php the_title(); ?></h1>
-			<?php else : ?>
-				<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
-			<?php endif; ?>
-			
-			<?php get_template_part('ui-PostMeta'); ?>
-
-		</header>
-		
-		<div class="ui-PostBody<?php echo (in_category('quotes')) ? ' Quotes' : ''; ?>"<?php echo is_singular() ? ' itemprop="articleBody"' : ' itemprop="description"'; ?>>
-			<?php if (is_singular()) : ?>
-			<?php the_content(); ?>
-			<?php else : ?>
-			<?php the_excerpt(); ?>
-			<?php endif; ?>
-		</div>
-		
-		<?php get_template_part('ui-PostFooter'); ?>
-		
+		<?php get_template_part('ui-PostBody'); ?>
 	<?php endif; ?>
+	
+		<?php get_template_part('ui-PostFooter'); ?>
 		
 	</article>
 	
-	<?php if (is_single() && !$image_only && !$text_quote) : ?>
+	<?php if (is_single() && !$image_only) : ?>
 	
 		<?php comments_template('/ui-Comments.php'); ?>
 		
