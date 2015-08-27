@@ -167,7 +167,7 @@ class comment_walker extends Walker_Comment {
 				<a class="comment-time" href="<?php the_permalink(); ?>#comment-<?php comment_ID() ?>"><time datetime="<?php comment_date('Y-m-d') ?>T<?php comment_time('H:iP') ?>" itemprop="datePublished"><?php comment_date('F j, Y') ?> @ <span><?php comment_time() ?></span></time></a>
 			</h5>
 			<div class="comment-content post-content" itemprop="text">
-				<figure class="gravatar"><?php echo get_avatar( $comment->comment_author_email, 50, 'http://www.digitalyouthsummit.pk/wp-content/uploads/2015/05/default-avatar.png', get_comment_author() ); ?></figure>
+				<figure class="gravatar"><?php echo get_avatar( $comment->comment_author_email, 50, get_bloginfo('template_url') . '/img/default-avatar.png', get_comment_author() ); ?></figure>
 				<?php comment_text() ?>
 			</div>
 			<?php edit_comment_link('<span class="comment-meta-item">Edit</span>','',''); ?></span>
