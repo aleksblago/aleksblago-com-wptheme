@@ -183,18 +183,18 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			display: inline-block;
 			font-size: 20px;
 			
-			// Make the social media icons slightly smaller
-			// as the screen size decreases.
-			@media screen and (max-width: 1024px) {
-				font-size: 18px;
-			}
-			
-			a {
+			& > a {
 				color: $WHITE;
 		
 				&:hover {
 					color: $LIGHT_GREEN;
 				}
+			}
+			
+			// Make the social media icons slightly smaller
+			// as the screen size decreases.
+			@media screen and (max-width: 1024px) {
+				font-size: 18px;
 			}
 		}
 	}
@@ -245,8 +245,12 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 				// Make the social media icons a bit larger when
 				// we switch to using the mobile optimized menu.
 				& > .nav-Social > li {
-					font-size: 26px;
-					margin: 0 0 10px 25px;
+					font-size: 24px;
+					margin: 0 0 10px 15px;
+			
+					&:first-child {
+						margin: 0 0 10px 0;
+					}
 				}
 			}
 		}
