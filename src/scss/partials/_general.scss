@@ -238,6 +238,10 @@ a {
 		opacity: .75;
 		width: 50px;
 	}
+	
+	&.ui-PostFooter--more::before {
+		display: none;
+	}
 }
 
 .ui-PostTags {

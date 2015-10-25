@@ -2,7 +2,7 @@
 $image_only = aleksMetaBox::get('image-only') == 'true' ? true : false;
 $text_quote = aleksMetaBox::get('text-quote') == 'true' ? true : false;
 
-// IF image...ELSEIF text quote...ELSE article.
+// IF image...ELSEIF text quote...ELSE article...ELSE page.
 if ($image_only && !$text_quote) {
 	$type = 'Image';
 } else if ($text_quote && !$image_only) {
@@ -17,7 +17,7 @@ if ($image_only && !$text_quote) {
 	
 <?php if (!is_singular() && !$image_only && !$text_quote) : ?>
 	
-<footer class="ui-PostFooter">
+<footer class="ui-PostFooter ui-PostFooter--more">
 	
 	<a href="<?php the_permalink(); ?>" class="nav-ReadMore" itemprop="url">Read More</a>
 	
