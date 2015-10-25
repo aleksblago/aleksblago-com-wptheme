@@ -3,7 +3,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=true">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	<meta name="format-detection" content="telephone=yes">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	
@@ -49,5 +49,3 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-	<div class="ui-Container">
-		<?php get_template_part('nav-Primary'); ?>

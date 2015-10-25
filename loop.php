@@ -17,9 +17,16 @@
 	
 	<?php // IF we have a regular article... ?>
 	<?php if (!$image_only && !$text_quote) : ?>
+	
+		<?php // Then show the article body. ?>
 		<?php get_template_part('ui-PostBody'); ?>
+		
 	<?php endif; ?>
 	
+		<?php
+		// Otherwise, just show the footer since we handle
+		// the image and text only posts in a different way.
+		?>
 		<?php get_template_part('ui-PostFooter'); ?>
 		
 	</article>
@@ -32,17 +39,11 @@
 		
 <?php endwhile; else: ?>
 
-	<article class="ui-Post">
-		<header class="ui-PostHeader">
-			<h1>Whoops! Looks like this page doesn't have content.</h1>
-		</header>
-		<div class="ui-PostBody"></div>
-		<footer class="ui-PostFooter"></footer>
-	</article>
+	<?php get_template_part('page-missing'); ?>
 
 <?php endif; //End Main Loop ?>
 
-<?php if (is_home() || is_front_page() || is_archive() || is_search()) : ?>
+<?php if (is_archive() || is_search()) : ?>
 
 <div class="nav-PageNavigation">
 	<div class="nav-PrevPosts"><?php next_posts_link( '<i class="fa fa-long-arrow-left"></i> Older Posts' ); ?></div>

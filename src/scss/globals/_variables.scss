@@ -8,8 +8,8 @@ $DARK_GREY: #3B3C3B;
 
 $BODY_COLOR: $SUPER_LIGHT_GREY;
 
-$SERIF_FONT: "Lora", serif;
-$SANS_SERIF_FONT: "Oswald", sans-serif;
+$SERIF_FONT: 'Lora', serif;
+$SANS_SERIF_FONT: 'Oswald', sans-serif;
 $FONT_ICONS: 'FontAwesome';
 
 $SERIF_FONT_COLOR: $DARK_GREY;
@@ -21,9 +21,9 @@ $LIGHT_GREEN: #00AB65;
 $MID_GREEN: #009E5D;
 $DARK_GREEN: #00844E;
 
-$PATTERN_BG: url( "img/pattern.png");
+$PATTERN_BG: url('img/pattern.png');
 
-$ANIM_SPEED: .3s;
+$ANIM_SPEED: 300ms;
 $ANIM_DELAYED: $ANIM_SPEED $ANIM_SPEED;
 
 $FOOTER_BG: #2B2D34;

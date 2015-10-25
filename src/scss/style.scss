@@ -9,12 +9,14 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+@import "font-awesome-4.4.0/font-awesome";
 @import "globals/reset";
 @import "globals/variables";
 @import "globals/placeholders";
 @import "globals/mixins";
 @import "globals/typography";
 
+@import "partials/homepage";
 @import "partials/general";
 @import "partials/search";
 @import "partials/navigation";

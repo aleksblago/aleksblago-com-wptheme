@@ -12,15 +12,13 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	height: 100%;
 
 	@media screen and (max-width: 800px) {
-		& {
-			padding: 0 30px;
-			position: relative;
-			overflow: hidden;
-			width: 100%;
-			height: 140px;
-			
-			transition: .1s;
-		}
+		padding: 0 30px;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 140px;
+		
+		transition: .1s;
 	}
 }
 	
@@ -29,9 +27,7 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	padding-bottom: 200px;
 	
 	@media screen and (max-width: 800px) {
-		& {
-			padding: 0;
-		}
+		padding: 0;
 	}
 }
 
@@ -71,15 +67,16 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	}
 	
 	@media screen and (max-width: 800px) {
-		& {
-			float: right;
-		}
+		float: right;
 	}
 }
 
 .nav-Background {
-	background: $PATTERN_BG;
+	background-image: $PATTERN_BG;
 	background-color: #202020;
+	background-attachment: fixed;
+	background-position: left top;
+	background-repeat: repeat;
 	bottom: 0;
 	position: absolute;
 	top: 0;
@@ -92,14 +89,12 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	
 	// Hide the navigation when smaller than 800 pixels.
 	@media screen and (max-width: 800px) {
-		& {
-			top: 0;
-			left: 0;
-			right: auto;
-			bottom: auto;
-			width: 100%;
-			height: 100%;
-		}
+		top: 0;
+		left: 0;
+		right: auto;
+		bottom: auto;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -131,12 +126,9 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 	}
 	
 	@media screen and (max-width: 800px) {
-		
-		& {
-			display: block;
-			float: left;
-			width: 50%;
-		}
+		display: block;
+		float: left;
+		width: 50%;
 		
 		& > li {
 			border-top: 1px solid rgba(0,0,0,0);
@@ -176,11 +168,9 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 .nav-Footer {
 	
 	@media screen and (max-width: 800px) {
-		& {
-			// ORIG display: none;
-			opacity: 0;
-			max-height: 0;
-		}
+		// ORIG display: none;
+		opacity: 0;
+		max-height: 0;
 	}
 	
 	// Social media buttons
@@ -196,9 +186,7 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 			// Make the social media icons slightly smaller
 			// as the screen size decreases.
 			@media screen and (max-width: 1024px) {
-				& {
-					font-size: 18px;
-				}
+				font-size: 18px;
 			}
 			
 			a {
@@ -247,18 +235,18 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		.nav-Footer {
 			
 			@media screen and (max-width: 800px) {
-				& {
-					// ORIG display: block;
-					opacity: 1;
-					max-height: 9999%;
-					margin: 25px 0 30px 0;
-					
-					transition: opacity $ANIM_DELAYED;
-				}
+				// ORIG display: block;
+				opacity: 1;
+				max-height: 9999%;
+				margin: 25px 0 30px 0;
 				
+				transition: opacity $ANIM_DELAYED;
+				
+				// Make the social media icons a bit larger when
+				// we switch to using the mobile optimized menu.
 				& > .nav-Social > li {
-					font-size: 22px;
-					margin: 0 0 10px 5px;
+					font-size: 26px;
+					margin: 0 0 10px 25px;
 				}
 			}
 		}
@@ -266,11 +254,9 @@ Styles for the primary site navigation. Basically, everything in the left sideba
 		.nav-Search {
 			// ORIG display: block;
 			opacity: 1;
-			margin: 60px 0 0 0;
+			margin: 30px 0 0 0;
 			max-height: 9999%;
 			transition: opacity $ANIM_DELAYED;
 		}
-		
 	}
-	
 }

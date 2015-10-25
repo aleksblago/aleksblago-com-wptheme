@@ -66,19 +66,18 @@
 	}
 	
 	@media screen and (max-width: 800px) {
-		& {
-			opacity: 0;
-			position: relative;
-			max-height: 0;
-			margin: 0;
-			
-			&Form {
-				padding: 0;
-			}
-			
-			&Input {
-				width: 75px;
-			}
+		opacity: 0;
+		position: relative;
+		max-height: 0;
+		margin: 0;
+		
+		&Form {
+			padding: 0;
+		}
+		
+		&Input {
+			font-size: 18px;
+			width: 90px;
 		}
 	}
 }

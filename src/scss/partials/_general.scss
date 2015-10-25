@@ -1,24 +1,24 @@
 html, body {
+	box-sizing: border-box;
 	height: 100%;
 }
 
 body {
+	box-sizing: border-box;
 	background: $BODY_COLOR;
 	color: $SERIF_FONT_COLOR;
 	font-family: $SERIF_FONT;
 	font-size: $SERIF_FONT_SIZE;
 	line-height: $BASE_LINE_HEIGHT;
 	
+	transition: font-size $ANIM_SPEED;
+	
 	@media screen and (max-width: 1024px) {
-		& {
-			font-size: 17px;
-		}
+		font-size: 17px;
 	}
 	
 	@media screen and (max-width: 640px) {
-		& {
-			font-size: 16px;
-		}
+		font-size: 16px;
 	}
 }
 
@@ -41,31 +41,28 @@ a {
 	width: 1180px;
 	min-height: 100%;
 	
+	transition:
+		padding $ANIM_SPEED,
+		padding-right $ANIM_SPEED,
+		width $ANIM_SPEED;
+	
 	@media screen and (max-width: 1200px) {
-		& {
-			padding-right: 45px;
-			width: 100%;
-		}
+		padding-right: 45px;
+		width: 100%;
 	}
 	
 	@media screen and (max-width: 1024px) {
-		& {
-			padding-right: 5%;
-		}
+		padding-right: 5%;
 	}
 	
 	@media screen and (max-width: 800px) {
-		& {
-			padding: 0;
-			width: 90%;
-			position: relative;
-		}
+		padding: 0;
+		width: 90%;
+		position: relative;
 	}
 	
 	@media screen and (max-width: 560px) {
-		& {
-			width: 95%;
-		}
+		width: 95%;
 	}
 }
 
@@ -74,12 +71,12 @@ a {
 	width: 72%;
 	max-width: 900px;
 	margin: 40px 0 0 0;
+	
+	transition: width $ANIM_SPEED;
 
 	@media screen and (max-width: 800px) {
-		& {
-			position: relative;
-			width: 100%;
-		}
+		position: relative;
+		width: 100%;
 	}
 }
 
@@ -116,7 +113,7 @@ a {
 	&.featured-video,
 	&.featured-codepen {
 		
-		&:before {
+		&::before {
 			display: block;
 			content: "";
 			width: 100%;
@@ -178,8 +175,14 @@ a {
 	padding: 40px 12% 0 12%;
 	
 	& a {
+		border-bottom: 1px dotted $DARK_GREEN;
 		font-weight: bold;
-		text-decoration: underline;
+		
+		transition: border-bottom $ANIM_SPEED;
+		
+		&:hover {
+			border-bottom: 1px dotted transparent;
+		}
 	}
 	
 	& img {
@@ -226,11 +229,21 @@ a {
 	margin-top: 40px;
 	padding: 0 12% 60px;
 	text-align: center;
+	
+	&::before {
+		border-top: 5px solid $LIGHT_GREY;
+		content: '';
+		display: block;
+		margin: 0 auto 30px;
+		opacity: .75;
+		width: 50px;
+	}
 }
 
 .ui-PostTags {
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: bold;
+	line-height: 200%;
 	margin: 0 0 40px 0;
 	
 	& > span {
@@ -240,15 +253,6 @@ a {
 	& > span > a {
 		font-style: italic;
 		text-transform: capitalize;
-	}
-	
-	&::before {
-		border-top: 5px solid $LIGHT_GREY;
-		content: '';
-		display: block;
-		margin: 0 auto 20px;
-		opacity: .75;
-		width: 50px;
 	}
 }
 
@@ -268,10 +272,10 @@ a {
 	& > li:first-child {
 		color: $DARK_GREY;
 		display: block;
-		font-size: 16px;
+		font-size: 18px;
 		font-family: $SANS_SERIF_FONT;
 		margin: 0;
-		padding: 0 0 20px 0;
+		padding: 0 0 30px 0;
 	}
 }
 
@@ -423,6 +427,13 @@ a {
 			opacity: 1;
 		}
 	}
+	
+	& + .ui-PostFooter {
+	
+		&::before {
+			display: none;
+		}
+	}
 }
 
 .ui-ImageFeature {
@@ -433,5 +444,12 @@ a {
 	& > img {
 		display: block;
 		width: 100%;
+	}
+	
+	& + .ui-PostFooter {
+	
+		&::before {
+			display: none;
+		}
 	}
 }

@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+	<div class="ui-Container">
+
+		<?php get_template_part('nav-Primary'); ?>
 
 		<div class="ui-ContentContainer">
 			
@@ -11,5 +14,6 @@
 			<?php get_template_part('loop'); ?>
 		
 		</div>
-
+		
+	</div><?php /* end .ui-Container */ ?>
 <?php get_footer(); ?>

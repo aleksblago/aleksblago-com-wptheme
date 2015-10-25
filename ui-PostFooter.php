@@ -7,8 +7,10 @@ if ($image_only && !$text_quote) {
 	$type = 'Image';
 } else if ($text_quote && !$image_only) {
 	$type = 'Quote';
-} else {
+} else if (is_single()) {
 	$type = 'Article';
+} else {
+	$type = 'Page';
 }
 
 ?>
@@ -21,7 +23,7 @@ if ($image_only && !$text_quote) {
 	
 </footer>
 
-<?php elseif(is_single()) : ?>
+<?php elseif(is_singular()) : ?>
 	
 <footer class="ui-PostFooter">
 	
@@ -30,12 +32,13 @@ if ($image_only && !$text_quote) {
 	<?php endif; ?>	
 	
 	<ul class="soc-SharePost">
-		<li class="soc-SharePost-title">Share This <?php echo $type; ?></li>
+		<li>Share This <?php echo $type; ?></li>
 		<li><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_the_permalink()); ?>" class="soc-SharePost-btn" title="Share <?php the_title(); ?> on Facebook"> <i class="fa fa-fw fa-facebook"></i></a></li>
 		<li><a target="_blank" href="https://twitter.com/share?url=<?php echo urlencode(get_the_permalink()); ?>&amp;via=_aleksblago&amp;text=<?php echo urlencode(get_the_title()); ?>" class="soc-SharePost-btn" title="Share <?php the_title(); ?> on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
 		<li><a target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php echo urlencode(get_the_permalink()); ?>" class="soc-SharePost-btn" title="Share <?php the_title(); ?> on Google Plus"> <i class="fa fa-fw fa-google-plus"></i></a></li>
 	</ul>
 	
+	<?php if (is_single()) : ?>
 	<div class="nav-PostNavigation">
 		<div class="nav-NextPost">
 			<?php previous_post_link('%link'); ?>
@@ -44,6 +47,7 @@ if ($image_only && !$text_quote) {
 			<?php next_post_link('%link'); ?>
 		</div>
 	</div>
+	<?php endif; ?>	
 	
 </footer>
 
