@@ -13,39 +13,24 @@
 
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' : '; } ?><?php bloginfo('name'); ?></title>
 	
-	<meta nam="title" content="<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' : '; } ?><?php bloginfo('name'); ?>">
-	
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/img/favicon/apple-touch-icon.png">
-	
-	<!-- Open Graph (FB) -->
-	<meta property="og:title" content="Aleks Blagojevich">
-	<meta property="og:type" content="blog">
-	<meta property="og:url" content="http://aleksblago.com">
-	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-192x192.png">
-	<meta property="og:site_name" content="Aleks Blagojevich">
-	<meta property="og:description" content="A blog about Technology, Business, Marketing, and everything else that interests designer and developer Aleks Blagojevich.">
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@TwitterName">
-	<meta name="twitter:description" content="A blog about Technology, Business, Marketing, and everything else that interests designer and developer Aleks Blagojevich.">
-	<meta name="twitter:title" content="Aleks Blagojevich">
-	<meta name="twitter:url" content="http://aleksblago.com">
-	<meta name="twitter:creator" content="@_aleksblago">
-	<meta name="twitter:image" content="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-192x192.png">	
-
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php if (!current_user_can('activate_plugins')) : ?>
 	<script>
-		
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-32004612-1', 'auto');
+	ga('require', 'linkid');
+	ga('send', 'pageview');
 	</script>
-	<?php wp_head(); ?>
-	
 	<?php endif; ?>
+	
+	<?php wp_head(); ?>
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
