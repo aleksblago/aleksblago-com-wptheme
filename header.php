@@ -11,7 +11,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 	<?php endif; ?>
 
-	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' : '; } ?><?php bloginfo('name'); ?></title>
+	<title><?php wp_title(''); ?></title>
 	
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/img/favicon/apple-touch-icon.png">
