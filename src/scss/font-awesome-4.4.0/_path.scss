@@ -3,7 +3,7 @@
 @import "compass/css3";
 
 @include font-face(
-	'Tungsten',
+	'FontAwesome',
 	font-files(
 		'fontawesome-webfont.woff?v=#{$fa-version}', woff,
 		'fontawesome-webfont.ttf?v=#{$fa-version}', ttf,
