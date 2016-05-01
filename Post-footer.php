@@ -17,7 +17,7 @@ if ($image_only && !$text_quote) {
 	
 <?php if (!is_singular() && !$image_only && !$text_quote) : ?>
 	
-<footer class="ui-PostFooter ui-PostFooter--more">
+<footer class="Post-footer Post-footer--more">
 	
 	<a href="<?php the_permalink(); ?>" class="nav-ReadMore" itemprop="url">Read More</a>
 	
@@ -25,10 +25,10 @@ if ($image_only && !$text_quote) {
 
 <?php elseif(is_singular()) : ?>
 	
-<footer class="ui-PostFooter">
+<footer class="Post-footer">
 	
 	<?php if (has_tag()) : ?>
-	<div class="ui-PostTags"><i class="fa fa-fw fa-tags"></i> Tags: <span itemprop="keywords"><?php the_tags('',', ',''); ?></span></div>
+	<div class="Post-tags"><i class="fa fa-fw fa-tags"></i> Tags: <span itemprop="keywords"><?php the_tags('',', ',''); ?></span></div>
 	<?php endif; ?>	
 	
 	<ul class="soc-SharePost">

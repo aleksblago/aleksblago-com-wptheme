@@ -9,21 +9,19 @@ $image = ($has_image) ? 'style="background-image: url(' . $featured_image . ');"
 
 <?php if (is_single()) : ?>
 	
-	<div class="ui-TextQuote" itemprop="citation">
+	<div class="TextQuote TextQuote--post" itemprop="citation">
 		<?php the_content(); ?>
 		<?php if ($has_image) : ?>
-		<div class="ui-TextQuoteOverlay"></div>
-		<div class="ui-TextQuoteImage" <?php echo $image; ?>></div>
+		<div class="TextQuote-image" <?php echo $image; ?>></div>
 		<?php endif; ?>
 	</div>
 	
 <?php else : ?>
 	
-	<a href="<?php the_permalink(); ?>" class="ui-TextQuote" itemprop="url">
+	<a href="<?php the_permalink(); ?>" class="TextQuote" itemprop="url">
 		<span itemprop="citation"><?php the_content(); ?></span>
 		<?php if ($has_image) : ?>
-		<div class="ui-TextQuoteOverlay"></div>
-		<div class="ui-TextQuoteImage" <?php echo $image; ?>></div>
+		<div class="TextQuote-image" <?php echo $image; ?>></div>
 		<?php endif; ?>
 	</a>
 

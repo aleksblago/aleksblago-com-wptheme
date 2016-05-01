@@ -2,7 +2,7 @@
 
 	<?php if (has_post_thumbnail()) : ?>
 	
-		<a href="<?php the_permalink(); ?>" class="ui-ImageFeature" itemprop="url">
+		<a href="<?php the_permalink(); ?>" class="ImageFeature" itemprop="url">
 			<?php the_post_thumbnail('large', array('itemprop' => 'image')); ?>
 		</a>
 		
@@ -11,13 +11,13 @@
 <?php else : ?>
 
 	<?php if (has_post_thumbnail()) : ?>
-		<div class="ui-ImageFeature">
+		<div class="ImageFeature">
 			<?php the_post_thumbnail('large', array('itemprop' => 'image')); ?>
 		</div>
 	<?php endif; ?>
 	
 	<?php if (get_the_content() !== '') : ?>
-		<div class="ui-PostBody"><?php the_content(); ?></div>
+		<div class="Post-body"><?php the_content(); ?></div>
 	<?php endif; ?>
 	
 <?php endif; ?>

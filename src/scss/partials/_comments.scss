@@ -1,4 +1,4 @@
-.ui-Comments {
+.Comments {
 	background: $WHITE;
 	box-shadow: $SHADOW;
 	display: block;
@@ -25,7 +25,7 @@
 	}
 }
 
-.ui-CommentsTitle {
+.Comments-title {
 	margin: 0 0 40px 0;
 }
 
@@ -35,12 +35,6 @@
 	& .comment:last-child {
 		margin: 0;
 	}
-}
-
-.ui-CommentsClosed {
-	font-style: italic;
-	padding: 0 0 60px 0;
-	text-align: center;
 }
 
 .comment-header {
@@ -143,12 +137,12 @@
 	margin: 20px 20px 0 0;
 }
 
-.ui-CommentsLabel {
+.Comments-label {
 	display: block;
 	margin: 10px 0 5px 0;
 }
 
-.ui-CommentsInput {
+.Comments-input {
 	border: 1px solid $LIGHT_GREY;
 	border-radius: 2px;
 	box-sizing: border-box;

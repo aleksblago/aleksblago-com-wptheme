@@ -1,5 +1,5 @@
 <?php /* Site Navigation */ ?>
-<nav class="nav-Primary">
+<nav class="nav-Primary js-primary-nav">
 	<header class="nav-Intro">
 		<h1 class="nav-Title"><a href="<?php bloginfo('url'); ?>/articles" itemprop="url"><span class="a">A</span><span class="b">B</span></a></h1>
 		<?php aleksblago_nav(); ?>

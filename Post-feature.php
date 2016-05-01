@@ -21,7 +21,7 @@ $thumbnail_as_background = ($has_both && $embed_type != 'video' && $embed_type !
 
 ?>
 
-<div class="ui-PostFeature <?php echo ($embed !== '') ? 'featured-' . $embed_type : '' ?>" <?php echo $thumbnail_as_background; ?>>
+<div class="Post-feature <?php echo ($embed !== '') ? 'featured-' . $embed_type : '' ?>" <?php echo $thumbnail_as_background; ?>>
 	
 	<?php echo ($embed !== '') ? $embed : ''; ?>
 	
@@ -29,15 +29,15 @@ $thumbnail_as_background = ($has_both && $embed_type != 'video' && $embed_type !
 	
 		<?php if (is_singular() && in_category('infographics')) : // Link image to the full sized image when its an infographic. ?>
 		
-			<a href="<?php echo $thumbnail_url; ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?></a>
+			<a href="<?php echo $thumbnail_url; ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'Post-image', 'itemprop' => 'image')); ?></a>
 			
 		<?php elseif (is_singular()) : // Regular post image ?>
 		
-			<?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?>
+			<?php the_post_thumbnail('large', array('class' => 'Post-image', 'itemprop' => 'image')); ?>
 			
 		<?php else : // We're on an archive page so link to the article. ?>
 		
-			<a href="<?php the_permalink(); ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'ui-PostImage', 'itemprop' => 'image')); ?></a>
+			<a href="<?php the_permalink(); ?>" itemprop="url"><?php the_post_thumbnail('large', array('class' => 'Post-image', 'itemprop' => 'image')); ?></a>
 			
 		<?php endif; ?>
 	

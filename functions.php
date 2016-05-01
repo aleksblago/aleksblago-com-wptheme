@@ -30,7 +30,7 @@ function aleksblago_nav()
 			'menu_class'      => 'nav-Links',
 			'echo'            => true,
 			'fallback_cb'     => 'wp_page_menu',
-			'items_wrap'      => '<ul class="%2$s"><li class="nav-MobileMenu"></li>%3$s</ul>',
+			'items_wrap'      => '<ul class="%2$s"><li class="nav-MobileMenu js-mobile-menu"></li>%3$s</ul>',
 			'depth'           => 0
 		)
 	);
