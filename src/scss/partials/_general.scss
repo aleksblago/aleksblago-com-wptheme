@@ -217,6 +217,12 @@ a {
 	& blockquote p {
 		margin: 0;
 	}
+	
+	& pre {
+		border-radius: 4px;
+		margin-bottom: 40px;
+	}
+	
 }
 
 .nav-ReadMore {

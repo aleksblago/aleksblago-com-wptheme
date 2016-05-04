@@ -61,10 +61,19 @@ function my_css_attributes_filter( $var )
 
 function theme_styles_and_scripts()
 {
-	wp_enqueue_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic');
-	wp_enqueue_style('font-oswald', 'http://fonts.googleapis.com/css?family=Oswald');
+	wp_register_style('font-lora', 'http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic');
+	wp_register_style('font-oswald', 'http://fonts.googleapis.com/css?family=Oswald');
 	wp_register_script('aleksblago', get_template_directory_uri() . '/js/main.js', array(), '1.0', true);
+	
+	wp_register_style('prism', get_template_directory_uri() . '/lib/prism/prism.css');
+	wp_register_script('prism', get_template_directory_uri() . '/lib/prism/prism.js');
+	
+	wp_enqueue_style('font-lora');
+	wp_enqueue_style('font-oswald');
 	wp_enqueue_script('aleksblago');
+	
+	wp_enqueue_style('prism');
+	wp_enqueue_script('prism');
 }
 
 // Remove 'text/css' from our enqueued stylesheet
