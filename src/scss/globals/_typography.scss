@@ -161,11 +161,12 @@ ol {
 code {
 	background: #EEE;
 	border-radius: 4px;
+	color: $TRUE_BLACK;
 	display: inline-block;
 	font-family: $MONOSPACE_FONT;
-	font-size: 94%;
-	margin: 0 6px;
-	padding: 0 6px;
+	font-size: 90%;
+	line-height: 160%;
+	padding: 0 5px;
 }
 
 // Adjust fixed width icons.
