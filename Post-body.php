@@ -8,7 +8,7 @@
 		<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
 	<?php endif; ?>
 	
-	<?php get_template_part('PostMeta'); ?>
+	<?php get_template_part('Post-meta'); ?>
 
 </header>
 
