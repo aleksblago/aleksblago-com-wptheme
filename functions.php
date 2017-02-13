@@ -17,7 +17,6 @@ if (function_exists('add_theme_support'))
 	add_image_size('medium', 600, '', true); // Medium Thumbnail
 	add_image_size('small', 300, '', true); // Small Thumbnail
 	add_image_size('custom-size', 850, 300, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
 }
 
 // Format site navigation
@@ -198,7 +197,29 @@ class comment_walker extends Walker_Comment {
 	<?php }
 
 }
-	
+
+// Clean Up Wordpress Head
+function clean_up_wp_head ()
+{
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wp_shortlink_wp_head');
+	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
+	add_filter('the_generator', '__return_false');
+	add_filter('show_admin_bar','__return_false');
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action('wp_head', 'feed_links_extra', 3);	
+}
+
+// Remove query parameters on static assets
+function remove_query_parameters($src)
+{
+	$parts = explode( '?ver', $src );
+	return $parts[0];
+}
+
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -212,6 +233,8 @@ add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove 
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 add_filter('excerpt_more', 'remove_excerpt_brackets');
 add_filter('excerpt_length', 'my_custom_excerpt', 999);
-
+add_action('after_setup_theme', 'clean_up_wp_head'); // Clean Up Wordpress Head
+add_filter( 'script_loader_src', 'remove_query_parameters', 15, 1 ); // Remove query parameters
+add_filter( 'style_loader_src', 'remove_query_parameters', 15, 1 ); // Remove query parameters
 
 ?>

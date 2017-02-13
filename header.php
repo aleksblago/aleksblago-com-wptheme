@@ -30,6 +30,7 @@
 	<?php endif; ?>
 	
 	<?php wp_head(); ?>
+	<link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('sitename') ?> Feed" href="<?php echo get_bloginfo('rss2_url') ?>">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
