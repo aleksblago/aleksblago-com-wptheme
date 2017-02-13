@@ -27,7 +27,7 @@ $args = array(
 	'cancel_reply_link' => __( 'Cancel' ),
 	'label_submit'      => __( 'Post a Reply' ),
 
-	'comment_field' =>  '<label class="Comments-label" title="Please share your thoughts, we would love to hear them!">Your Comments</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="Comments-input"></textarea>',
+	'comment_field' => '<label class="Comments-label" title="Please share your thoughts, we would love to hear them!">Your Comments</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="Comments-input"></textarea>',
 
 	'must_log_in' => '<p class="must-log-in">' .
 	sprintf(
@@ -43,11 +43,10 @@ $args = array(
 		wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
 	) . '</p>',
 
-  'comment_notes_before' => '',
-  // 'comment_notes_after' => '',
-  'comment_notes_after' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
-  
-  'fields' => apply_filters( 'comment_form_default_fields', array(
+	'comment_notes_before' => '',
+	'comment_notes_after' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+
+	'fields' => apply_filters( 'comment_form_default_fields', array(
 
 		'author' =>
 			'<label class="Comments-label" for="author" title="Your name is required to post a comment.">Name <span class="required">*</span></label>'.
@@ -61,7 +60,7 @@ $args = array(
 			'<label class="Comments-label" for="url" title="If you would like to share your website url publicly, enter it here.">Website URL</label>'.
 			'<input name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" class="Comments-input" />'
 		)
-  
+
 	)
 );
 
@@ -89,7 +88,7 @@ comment_form($args); ?>
 	<?php endif; ?>
 	
 	<?php if ( comments_open() && !have_comments() ) : ?>
-		<!-- If comments are open, but there are no comments. -->
+		<?php // If comments are open, but there are no comments. ?>
 		<p>Be the first to share your thoughts!</p>
 		
 	<?php elseif ( !comments_open() ) : ?>
