@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<div class="Container">
 
-		<?php get_template_part('nav-Primary'); ?>
+		<?php get_template_part('partials/Navigation'); ?>
 
 		<div class="ContentContainer">
 			

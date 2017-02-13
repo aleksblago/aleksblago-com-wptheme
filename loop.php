@@ -8,18 +8,18 @@
 	<article class="Post" itemscope itemtype="http://schema.org/BlogPosting">
 		
 	<?php if ($image_only) : ?>
-		<?php get_template_part('ImageFeature'); ?>
+		<?php get_template_part('partials/ImageFeature'); ?>
 	<?php endif; ?>
 	
 	<?php if ($text_quote) : ?>
-		<?php get_template_part('TextQuote'); ?>
+		<?php get_template_part('partials/TextQuote'); ?>
 	<?php endif; ?>
 	
 	<?php // IF we have a regular article... ?>
 	<?php if (!$image_only && !$text_quote) : ?>
 	
 		<?php // Then show the article body. ?>
-		<?php get_template_part('Post-body'); ?>
+		<?php get_template_part('partials/Post-body'); ?>
 		
 	<?php endif; ?>
 	
@@ -27,13 +27,13 @@
 		// Otherwise, just show the footer since we handle
 		// the image and text only posts in a different way.
 		?>
-		<?php get_template_part('Post-footer'); ?>
+		<?php get_template_part('partials/Post-footer'); ?>
 		
 	</article>
 	
 	<?php if (is_single()) : ?>
 	
-		<?php comments_template('/Comments.php'); ?>
+		<?php comments_template('./Comments.php'); ?>
 		
 	<?php endif; ?>
 		

@@ -1,6 +1,6 @@
 <header class="Post-header">
 	
-	<?php get_template_part('Post-feature'); ?>
+	<?php get_template_part('partials/Post-feature'); ?>
 	
 	<?php if (is_singular()) : ?>
 		<h1 itemprop="name headline"><?php the_title(); ?></h1>
@@ -8,7 +8,7 @@
 		<h1 itemprop="name headline"><a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a></h1>
 	<?php endif; ?>
 	
-	<?php get_template_part('Post-meta'); ?>
+	<?php get_template_part('partials/Post-meta'); ?>
 
 </header>
 
