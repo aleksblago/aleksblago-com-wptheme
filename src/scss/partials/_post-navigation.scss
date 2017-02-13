@@ -1,0 +1,59 @@
+.nav-PostNavigation {
+	@extend %CLEAR;
+	border-top: 1px dotted $LIGHT_GREY;
+	font-size: 16px;
+	line-height: 140%;
+	margin-top: 40px;
+	padding-top: 40px;
+		
+	.nav-PrevPost,
+	.nav-NextPost {
+		position: relative;
+		width: 30%;
+		
+		& > a {
+			color: $LIGHT_GREY;
+		}
+		
+		&:hover {
+			& > a {
+				color: $MID_GREEN;
+			}
+			
+			& > a::before,
+			& > a::after {
+				color: $MID_GREEN;
+			}
+		}
+	}
+	
+	.nav-PrevPost {
+		float: left;
+		padding-left: 25px;
+		text-align: left;
+		
+		a::before {
+			color: $LIGHT_GREY;
+			content: '\f053';
+			font-family: $FONT_ICONS;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.nav-NextPost {
+		float: right;
+		padding-right: 25px;
+		text-align: right;
+		
+		a::after {
+			color: $LIGHT_GREY;
+			content: '\f054';
+			font-family: $FONT_ICONS;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+}

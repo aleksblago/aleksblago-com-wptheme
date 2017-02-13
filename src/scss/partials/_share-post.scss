@@ -1,0 +1,22 @@
+.soc-SharePost {
+	display: block;
+	font-size: 30px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	
+	& > li {
+	 	display: inline-block;
+	 	margin: 0;
+	 	padding: 0 10px;
+	}
+	
+	& > li:first-child {
+		color: $DARK_GREY;
+		display: block;
+		font-size: 18px;
+		font-family: $SANS_SERIF_FONT;
+		margin: 0;
+		padding: 0 0 30px 0;
+	}
+}

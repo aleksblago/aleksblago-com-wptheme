@@ -16,7 +16,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "globals/typography";
 
 @import "partials/homepage";
+@import "partials/container";
+@import "partials/content-container";
 @import "partials/general";
+@import "partials/post-header";
+@import "partials/post-missing";
+@import "partials/post-feature";
+@import "partials/post-image";
+@import "partials/post-meta";
+@import "partials/post-body";
+@import "partials/post-footer";
+@import "partials/post-tags";
+@import "partials/post-navigation";
+@import "partials/page-navigation";
+@import "partials/share-post";
+@import "partials/text-quote";
+@import "partials/image-feature";
 @import "partials/search";
 @import "partials/navigation";
 @import "partials/comments";

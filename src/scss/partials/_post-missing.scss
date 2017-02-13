@@ -1,0 +1,10 @@
+.Post-missing {
+	text-align: center;
+	
+	& > h1 {
+		color: $DARK_GREEN;
+		font-family: $SANS_SERIF_FONT;
+		margin: 0;
+		padding: 70px 12%;
+	}
+}

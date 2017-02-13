@@ -1,0 +1,13 @@
+.ContentContainer {
+	float: right;
+	width: 72%;
+	max-width: 900px;
+	margin: 40px 0 0 0;
+	
+	transition: width $ANIM_SPEED;
+
+	@media screen and (max-width: 800px) {
+		position: relative;
+		width: 100%;
+	}
+}

@@ -1,0 +1,22 @@
+.nav-PageNavigation {
+	@extend %CLEAR;
+	font-family: $SANS_SERIF_FONT;
+	font-size: 18px;
+	margin-bottom: 60px;
+	
+	& a {
+		color: $LIGHT_GREY;
+		
+		&:hover {
+			color: $MID_GREEN;
+		}
+	}
+	
+	.nav-PrevPosts {
+		float: left;
+	}
+	
+	.nav-NextPosts {
+		float: right;
+	}
+}

@@ -1,0 +1,15 @@
+.Post-tags {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 200%;
+	margin: 0 0 40px 0;
+	
+	& > span {
+		font-weight: normal;
+	}
+	
+	& > span > a {
+		font-style: italic;
+		text-transform: capitalize;
+	}
+}

@@ -1,0 +1,33 @@
+.Container {
+	@extend %CLEAR;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding-right: 55px;
+	position: relative;
+	width: 1180px;
+	min-height: 100%;
+	
+	transition:
+		padding $ANIM_SPEED,
+		padding-right $ANIM_SPEED,
+		width $ANIM_SPEED;
+	
+	@media screen and (max-width: 1200px) {
+		padding-right: 45px;
+		width: 100%;
+	}
+	
+	@media screen and (max-width: 1024px) {
+		padding-right: 5%;
+	}
+	
+	@media screen and (max-width: 800px) {
+		padding: 0;
+		width: 90%;
+		position: relative;
+	}
+	
+	@media screen and (max-width: 560px) {
+		width: 95%;
+	}
+}

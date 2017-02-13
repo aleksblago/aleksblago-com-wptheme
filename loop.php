@@ -33,13 +33,17 @@
 	
 	<?php if (is_single()) : ?>
 	
-		<?php comments_template('./Comments.php'); ?>
+		<?php comments_template(); ?>
 		
 	<?php endif; ?>
 		
 <?php endwhile; else: ?>
 
-	<?php get_template_part('page-missing'); ?>
+	<article class="Post">
+		<header class="Post-missing">
+			<h1>Whoops! Looks like this page doesn't have content.</h1>
+		</header>
+	</article>
 
 <?php endif; //End Main Loop ?>
 

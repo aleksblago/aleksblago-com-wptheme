@@ -1,0 +1,19 @@
+.Post-footer {
+	@extend %CLEAR;
+	margin-top: 40px;
+	padding: 0 12% 60px;
+	text-align: center;
+	
+	&::before {
+		border-top: 5px solid $LIGHT_GREY;
+		content: '';
+		display: block;
+		margin: 0 auto 30px;
+		opacity: .75;
+		width: 50px;
+	}
+	
+	&.Post-footer--more::before {
+		display: none;
+	}
+}

@@ -1,0 +1,69 @@
+.Post-body {
+	font-family: $SERIF_FONT;
+	padding: 40px 12% 0 12%;
+	transition: padding $ANIM_SPEED;
+
+	
+	& a {
+		border-bottom: 1px dotted $DARK_GREEN;
+		font-weight: bold;
+		
+		transition: border-bottom $ANIM_SPEED;
+		
+		&:hover {
+			border-bottom: 1px dotted transparent;
+		}
+	}
+	
+	& img {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	
+	& p img {
+		margin: 40px auto;
+	}
+	
+	& figure {
+		margin: 0 -9% 40px -9%;
+		padding: 5px 0 0 0;
+		text-align: center;
+		
+		
+		& > figcaption {
+			color: $LIGHT_GREY;
+			font-size: 0.9em;
+			font-style: italic;
+			text-align: center;
+		}
+	}
+	
+	& p {
+		line-height: 180%;
+		margin-bottom: 40px;
+	
+		@media screen and (max-width: 800px) {
+			margin-bottom: 30px;
+		}
+	}
+	
+	& blockquote p {
+		margin: 0;
+	}
+	
+	& pre {
+		background: $BLACK;
+		border-radius: 4px;
+		margin-bottom: 40px;
+	}
+	
+	@media screen and (max-width: 1024px) {
+		padding: 40px 10% 0 10%;
+	}
+	
+	@media screen and (max-width: 800px) {
+		padding: 40px 8% 0 8%;
+	}
+	
+}
